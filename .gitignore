@@ -1,0 +1,58 @@
+# .NET 8 .gitignore file
+
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Backup & temporary files
+*.bak
+*.swp
+*.tmp
+
+# Package directories
+**/node_modules/
+**/packages/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Resharper
+_ReSharper.Caches/
+
+# Azure Functions
+.local.settings.json
+
+# DotNet user secrets
+**/secrets.json
+
+# Entity Framework Migrations
+Migrations/
+
+# Coverage results
+coverage/
+*.coverage
+*.coveragexml
+*.codecov
+
+# Publish results
+wwwroot/
