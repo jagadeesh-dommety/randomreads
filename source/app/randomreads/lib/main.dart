@@ -43,8 +43,8 @@ class _RandomReadsAppState extends State<RandomReadsApp> {
         ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
             letterSpacing: -0.5,
             height: 1.2,
           ),
@@ -52,7 +52,7 @@ class _RandomReadsAppState extends State<RandomReadsApp> {
             fontSize: 14,
             height: 1.8,
             letterSpacing: 0.2,
-            color: Color(0xFF2D2D2D),
+            color: Color(0xFF333333),
           ),
         ),
       ),
@@ -79,7 +79,7 @@ class _RandomReadsAppState extends State<RandomReadsApp> {
             fontSize: 14,
             height: 1.8,
             letterSpacing: 0.2,
-            color: Color(0xFFD0D0D0),
+            color: Color(0xFF333333),
           ),
         ),
       ),

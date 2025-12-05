@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:randomreads/randomreads_app_bar.dart';
+import 'package:randomreads/read_footer.dart';
+import 'package:randomreads/read_title_widget.dart';
+import 'package:randomreads/thememode.dart';
 
 class MyHomePage extends StatefulWidget {
   final VoidCallback toggleTheme;
@@ -14,6 +18,11 @@ class _MyHomePageState extends State<MyHomePage> {
   final ScrollController _scrollController = ScrollController();
   double _scrollProgress = 0.0;
   bool _isSaved = false;
+  // Font size options
+  final List<double> _fontSizes = [14.0, 16.0, 18.0];
+  final List<double> _lineHeights = [1.7, 1.8, 1.9];
+  final List<String> _fontSizeLabels = ['Small', 'Medium', 'Large'];
+  int _fontSizeIndex = 1; // 0: Small, 1: Medium, 2: Large
 
   @override
   void initState() {
@@ -32,10 +41,24 @@ class _MyHomePageState extends State<MyHomePage> {
     final maxScroll = _scrollController.position.maxScrollExtent;
     final currentScroll = _scrollController.position.pixels;
     setState(() {
-      _scrollProgress = maxScroll > 0 ? (currentScroll / maxScroll).clamp(0.0, 1.0) : 0.0;
+      _scrollProgress =
+          maxScroll > 0 ? (currentScroll / maxScroll).clamp(0.0, 1.0) : 0.0;
+    });
+  }
+void _handleDoubleTap() {
+    HapticFeedback.mediumImpact();
+    setState(() {
+      _isSaved = !_isSaved;
     });
   }
 
+  // Single tap to cycle font size
+  void _handleSingleTap() {
+    HapticFeedback.lightImpact();
+    setState(() {
+      _fontSizeIndex = (_fontSizeIndex + 1) % _fontSizes.length;
+    });
+  }
   void _toggleSave() {
     HapticFeedback.mediumImpact();
     setState(() {
@@ -43,7 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(_isSaved ? "Saved to favorites!" : "Removed from favorites"),
+        content:
+            Text(_isSaved ? "Saved to favorites!" : "Removed from favorites"),
         duration: const Duration(seconds: 2),
         behavior: SnackBarBehavior.floating,
       ),
@@ -71,129 +95,70 @@ Centuries ticked by, and Europe's minds joined the hunt: Archimedes in Sicily sk
       body: Stack(
         children: [
           // Main Content
-          CustomScrollView(
-            controller: _scrollController,
-            slivers: [
-              // App Bar
-              appbar(theme),
-
-              // Content
-              SliverToBoxAdapter(
-                child: Center(
-                  child: Container(
-                    width: contentWidth,
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: 20),
-
-                        // Story Title
-                        Text(
-                          "The Endless Chase for Pi",
-                          style: theme.textTheme.displayLarge,
-                        ),
-
-                        const SizedBox(height: 4),
-
-                        // Metadata
-                        Row(
+          RefreshIndicator(
+            displacement: 100,
+            onRefresh: () async {
+              // Simulate a refresh action
+              await Future.delayed(const Duration(seconds: 1));
+            },
+            child: CustomScrollView(
+              controller: _scrollController,
+              slivers: [
+                // App Bar
+                RandomreadsAppBar(theme: theme),
+            
+                // Content
+                SliverToBoxAdapter(
+                  child: Center(
+                    child: GestureDetector(
+                        onTap: _handleSingleTap,
+                  // Double tap for like
+                  onDoubleTap: _handleDoubleTap,
+                  // Prevent tap conflicts
+                  behavior: HitTestBehavior.opaque,
+                      child: Container(
+                        width: contentWidth,
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.access_time,
-                              size: 16,
-                              color: theme.colorScheme.onSurface.withOpacity(0.6),
-                            ),
-                            const SizedBox(width: 6),
-                            Text(
-                              "3 min read",
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: theme.colorScheme.onSurface.withOpacity(0.6),
-                                fontSize: 14,
-                              ),
-                            ),
-                            const SizedBox(width: 16),
+                            ReadTitleWidget(theme: theme),
+                                  
+                            // Main Content with animated font size
+                        AnimatedDefaultTextStyle(
+                          duration: const Duration(milliseconds: 200),
+                          curve: Curves.easeInOut,
+                          style: theme.textTheme.bodyLarge!.copyWith(
+                            fontSize: _fontSizes[_fontSizeIndex],
+                            height: _lineHeights[_fontSizeIndex],
+                          ),
+                          child: Text(
+                            sampleRead,
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                                  
+                            const SizedBox(height: 24),
+                                  
+                            // Divider
                             Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 10,
-                                vertical: 4,
-                              ),
-                              decoration: BoxDecoration(
-                                color: theme.colorScheme.primaryContainer,
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Text(
-                                "History",
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  color: theme.colorScheme.onPrimaryContainer,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
+                              height: 1,
+                              color: theme.colorScheme.onSurface.withOpacity(0.1),
                             ),
+                                  
+                            const SizedBox(height: 16),
+                                  
+                            // Action Section
+                            ReadFooter(theme: theme, isSaved: _isSaved),
+                            const SizedBox(height: 48),
                           ],
                         ),
-
-                        const SizedBox(height: 16),
-
-                        // Divider
-                        Container(
-                          height: 1,
-                          color: theme.colorScheme.onSurface.withOpacity(0.1),
-                        ),
-
-                        const SizedBox(height: 16),
-
-                        // Main Content
-                        Text(
-                          sampleRead,
-                          style: theme.textTheme.bodyLarge,
-                        ),
-
-                        const SizedBox(height: 24),
-
-                        // Divider
-                        Container(
-                          height: 1,
-                          color: theme.colorScheme.onSurface.withOpacity(0.1),
-                        ),
-
-                        const SizedBox(height: 32),
-
-                        // Action Section
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Enjoyed this read?",
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                color: theme.colorScheme.onSurface.withOpacity(0.7),
-                              ),
-                            ),
-                            IconButton.filled(
-                              icon: Icon(
-                                _isSaved ? Icons.favorite : Icons.favorite_border,
-                              ),
-                              onPressed: _toggleSave,
-                              style: IconButton.styleFrom(
-                                backgroundColor: _isSaved
-                                    ? Colors.red.shade400
-                                    : theme.colorScheme.primaryContainer,
-                                foregroundColor: _isSaved
-                                    ? Colors.white
-                                    : theme.colorScheme.onPrimaryContainer,
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        const SizedBox(height: 80),
-                      ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
 
           // Reading Progress Indicator
@@ -213,37 +178,5 @@ Centuries ticked by, and Europe's minds joined the hunt: Archimedes in Sicily sk
         ],
       ),
     );
-  }
-
-  SliverAppBar appbar(ThemeData theme) {
-    return SliverAppBar(
-              expandedHeight: 0,
-              pinned: false,
-              backgroundColor: theme.colorScheme.surface.withOpacity(0.95),
-              elevation: 0,
-              leading: const Icon(Icons.menu),
-              centerTitle: true, // Ensures the title is centered
-              title: Text(
-                "Random Reads",
-                style: theme.textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              actions: [
-                IconButton(onPressed: (){
-
-                }, icon: const Icon(Icons.favorite_border_outlined)),
-                IconButton(
-                  icon: Icon(
-                    theme.brightness == Brightness.dark
-                        ? Icons.light_mode_outlined
-                        : Icons.dark_mode_outlined,
-                  ),
-                  onPressed: widget.toggleTheme,
-                  tooltip: "Toggle theme",
-                ),
-                const SizedBox(width: 4),
-              ],
-            );
   }
 }
