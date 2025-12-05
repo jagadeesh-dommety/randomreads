@@ -296,7 +296,65 @@ A philosophical story on randomness, bias, and why truly random coins don’t ex
 ## Starwars
 
 ## Friends
+Joey's Audition Flop That Almost Killed the Show: Matt LeBlanc's botched callback where he tripped over a prop chair, turning panic into the Joey charm that sealed his role—nearly derailing the pilot.
+The Pivot Blooper That Broke David Schwimmer: Ross's infamous couch-moving rant where Schwimmer's real frustration cracked up the entire set, spawning a meme that haunted him for years.
+Lisa Kudrow's Endless Laugh Fits with Phoebe's Songs: The "Smelly Cat" outtake where Kudrow's improv giggles infected the cast, turning a simple tune into a 20-take blooper fest.
+Matthew Perry's Prank War on the Set: Chandler's quick wit off-screen, like when Perry hid LeBlanc's script in a pizza box, causing a 30-minute hunt during a Joey monologue.
+Jennifer Aniston's Reluctant Rachel Casting: How Aniston was pigeonholed for drama roles but fought for the comedic Rachel, including a tearful audition where she nailed the "runaway bride" speech.
+The Bagpipe Scene Where Everyone Lost It: Ross's kilt-clad performance where the squeaky notes sent Kudrow and Cox into hysterics, delaying production by an hour.
+Courteney Cox Almost Played Rachel: The last-minute switch where Cox lobbied hard for Monica, leading to Aniston's emotional pivot—and how it saved the show's dynamic.
+Matt LeBlanc's Literal Trip During Joey's Entrances: The recurring blooper where LeBlanc face-plants entering Monica's apartment, turning a simple walk-on into cast-wide chaos.
+The Cast's Salary Rebellion in Season 3: How the six negotiated as a unit for equal pay, turning a near-strike into a million-dollar-per-episode legacy.
+Lisa Kudrow's Uncontrollable Giggles with Jennifer Coolidge: The "perfect arse" line where Kudrow's laugh spirals, pulling in the whole crew for a 15-minute reset.
+David Schwimmer's Near-Quit Over Ross's Divorces: The behind-the-scenes frustration with the "we were on a break" arc, and how it almost led to a cast intervention.
+Matthew Perry's Mustache Mishap in the Finale: The awkward facial hair that sparked set-wide teasing, turning a serious wrap scene into improv gold.
+The Fountain Shoot at Dawn Gone Wrong: How the iconic opening credits were filmed at 5 AM, with the cast freezing and slipping on wet tiles for hours.
+Courteney Cox's Pregnancy Cover-Up Shenanigans: The creative wardrobe hacks and camera angles to hide her real-life pregnancy during Season 8.
+Joey's Soap Opera Exit Prank: LeBlanc's ad-libbed "death" scene where he faked a dramatic faint, cracking up the guest writers.
+The Cast's Real-Life Intervention for Perry: Off-camera talks about his struggles, mirroring Chandler's sarcasm with genuine support during dark seasons.
+Rachel's Head-Turn Blooper Epidemic: Aniston's habitual hair flips that derailed 10+ takes, turning a simple coffee scene into laughter therapy.
+The Central Perk Couch's Secret Origin: How a $500 flea-market find became the gang's emotional anchor, surviving floods and cast pranks.
+Schwimmer Directing Episodes Amid Chaos: Ross's actor calling "cut" on his own blooper, leading to a set-wide improv jam session.
+The Reunion Special's Tearful Table Read: 2021's HBO Max gathering where old scripts sparked unscripted sobs and hugs, revealing the cast's unbreakable family tie
+The Cast’s Salary Rebellion in Season 3: The six stars insisted on equal pay, even taking pay cuts to maintain parity, leading to $1 million per episode paychecks in the final seasons.
 
+The Theme Song Nobody Loved at First: The iconic “I’ll Be There for You” theme was actually disliked by most of the cast initially, who thought the fountain dancing in the opening sequence was odd.
+
+David Schwimmer Originally Didn’t Want to Play Ross: Despite the role being written for him, Schwimmer wasn’t eager at first due to previous TV experience he didn’t enjoy.
+
+Courteney Cox Almost Didn’t Play Monica: She originally auditioned for Rachel and only accepted Monica reluctantly, worried Monica was too "neurotic."
+
+The Central Perk Orange Couch Came From a Basement: The couch that became so iconic was found in Warner Bros' basement and then cleaned up for the show.
+
+Phoebe Was Originally a Darker Character: The producers originally envisioned Phoebe as a Goth, much darker than the whimsical character Lisa Kudrow portrayed.
+
+Jennifer Aniston Was Cast Last: Ironically, Aniston was the final main cast member to be cast after several auditions.
+
+Matthew Perry Had a Secret Crush on Jennifer Aniston: He admitted it early on but soon realized it was unrequited.
+
+Lisa Kudrow Co-Wrote 'Smelly Cat': Kudrow helped write the lyrics with the show’s music producer, making it one of the most memorable motifs.
+
+The Monkey Marcel Was a Nightmare to Work With: David Schwimmer revealed that Marcel often ruined takes, leading to many reshoots.
+
+Janice Was Meant to Be a One-Time Character: She became recurring due to the cast’s love for Maggie Wheeler’s performance.
+
+Matthew Perry Accidentally Banged His Head Multiple Times on Set: Due to the tight space on set, Perry suffered some on-screen and off-screen head injuries.
+
+Rachel and Joey’s Romance Was a Strategic Delay: Their relationship was introduced in later seasons mainly to postpone the long-awaited Ross-Rachel reconciliation.
+
+The “Friends” Cast Were Given a Piece of the Sidewalk Outside Central Perk: A sentimental gift to commemorate their decade-long run.
+
+Bruce Willis’ Cameo was the Result of a Bet: Willis appeared for free after losing a bet with Matthew Perry.
+
+Helen Baxendale’s Pregnancy Shortened Her Role as Emily: Real-life events shortened an important storyline, forcing writers to adjust plotlines.
+
+Chandler’s Job Was Intentionally Vague: Neither the cast nor the audience completely understood what Chandler Bing did for a living.
+
+The Show Almost Had a Different Title: Titles like "Insomnia Cafe" and "Across the Hall" were considered before settling on "Friends."
+
+The Cast Strongly Influenced Their Characters: For example, many elements of Phoebe’s quirks and Chandler’s sarcasm were improvised or actor-inspired.
+
+Fan Response Changed the Show’s Direction: Monica and Chandler's relationship was initially a one-time plot, but fans loved it so much it became permanent.
 ## Breaking Bad
 
 ## Medicine
