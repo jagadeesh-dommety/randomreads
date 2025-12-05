@@ -29,3 +29,21 @@ Raise a glass to your crew someday. The best toasts are the ones left unsaid.
 In the dim glow of Bell Labs in 1971, Dennis Ritchie and Ken Thompson coded Unix on a PDP-11, settling on a simple heartbeat: seconds since January 1, 1970—Unix time, a 32-bit counter for files, logs, everything. It fit on punch cards back then, powering servers that birthed the internet, your phone's wake-up chime, the stock tickers flashing billions in trades. Y2K? A millennium hiccup from two-digit years; this is subtler, a silent overflow.
 Come January 19, 2038, at 3:14:07 UTC, that counter maxes at 2^31-1 seconds—then flips negative, like a car odometer rolling backward. Clocks shatter: Flights reroute to 1901, ATMs spit errors, IoT bulbs flicker into the past. Engineers eye 64-bit fixes, but legacy code lurks in routers and cars, a Y2K echo demanding audits worldwide. Ritchie's epoch, born of thrift, now races the calendar—programmers scrambling to patch the stars before the clock strikes wrong.
 Check your device's date someday. Time's arrow bends easy in code's quiet march.
+
+## Physics: Moore's Law: The Marvel Behind Modern Electronics and the Journey to 5nm Transistors
+
+If you’ve ever wondered why your phone from five years ago now feels like a potato, there’s a quiet hero behind that feeling: Moore’s Law. And its story actually starts with a simple observation made by Gordon Moore back in 1965, long before anyone imagined smartphones, AI, or binge‑watching.
+
+Moore, who later co‑founded Intel, noticed something fascinating while studying early microchips. The number of transistors—those tiny on–off switches that make computing possible—was doubling roughly every year. He later stretched that to every two years, but the idea stuck. It wasn’t a scientific law, just a trend he spotted. Yet somehow, the entire tech industry took it as a challenge and said, “Alright, let’s make this happen.”
+
+And they did. For decades.
+
+The wild part? When Moore first made his prediction, transistors were still visible to the naked eye. Today, they’re measured in nanometers. A human hair is about 80,000 to 100,000 nanometers wide. Engineers now routinely place billions of 5‑nanometer transistors on a chip smaller than your fingernail. That’s the kind of progress that feels like science fiction if you say it out loud.
+
+Getting to 5nm wasn’t just a matter of shrinking things. When you work at those scales, physics starts acting like a mischievous gremlin—electrons leak, heat spikes, and materials behave unpredictably. So engineers invented new tricks: 3D FinFET transistors that stick up like tiny fins, strange‑sounding materials like high‑k dielectrics, and mind‑bending manufacturing tools like extreme ultraviolet lithography, which basically etches circuits using light wavelengths far smaller than anything humans used before.
+
+Even so, everyone knows we’re inching toward the wall. You can’t shrink transistors forever; eventually you hit the size of atoms. That’s why companies are now exploring new ideas—mixing different types of chips together, redesigning computer architectures, and experimenting with quantum computing. Moore’s Law may be fading, but its spirit is very much alive.
+
+What makes this story compelling isn’t just the technology. It’s the people behind it—the engineers who stayed up nights trying to push boundaries a few more nanometers, and Gordon Moore, who made a prediction that ended up guiding an entire industry for half a century.
+
+Moore’s Law isn’t really a law. It’s a promise humanity kept to itself: to keep pushing, shrinking, improving, and dreaming. And that journey is still unfolding today.
