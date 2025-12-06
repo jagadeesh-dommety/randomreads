@@ -9,3 +9,14 @@ The user interface is clean and straightforward, offering a seamless single-page
 Immediate sign-in is not required, will prompt in 2nd day or so!
 
 ## App Pitch
+
+ 
+## Minimalistic UI
+Menu (profile, saved/liked, streaks, theme, logout)
+Pull to refresh
+Double tap to like
+Single tap for font size cycle
+Bottom actions: Share, Like, Report
+Topic blocking via report
+Offline caching (20 articles)
+No repeated articles

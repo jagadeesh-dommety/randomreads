@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:randomreads/my_home_page.dart';
+import 'package:randomreads/pagewidgets/my_home_page.dart';
 
 class Thememode extends StatelessWidget {
   const Thememode({

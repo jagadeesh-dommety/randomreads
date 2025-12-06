@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:randomreads/models/readitem.dart';
 
 class ReadTitleWidget extends StatelessWidget {
   const ReadTitleWidget({
     super.key,
     required this.theme,
+    required this.currentread,
   });
 
   final ThemeData theme;
+  final ReadItem currentread;
 
   @override
   Widget build(BuildContext context) {
+    int readtime = currentread.content.split(' ').length ~/ 300;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -17,7 +21,7 @@ class ReadTitleWidget extends StatelessWidget {
         
         // Story Title
         Text(
-          "The Endless Chase for Pi",
+          currentread.title,
           style: theme.textTheme.displayLarge,
         ),
         
@@ -34,7 +38,7 @@ class ReadTitleWidget extends StatelessWidget {
             ),
             const SizedBox(width: 6),
             Text(
-              "3 min read",
+              "$readtime min read",
               style: theme.textTheme.bodySmall?.copyWith(
                 color: theme.colorScheme.onSurface
                     .withOpacity(0.6),
@@ -52,7 +56,7 @@ class ReadTitleWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                "History",
+                currentread.topic,
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: theme.colorScheme.onPrimaryContainer,
                   fontSize: 12,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:randomreads/my_home_page.dart';
+import 'package:randomreads/pagewidgets/my_home_page.dart';
 
 void main() {
   runApp(const RandomReadsApp());
