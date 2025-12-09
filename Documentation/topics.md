@@ -385,7 +385,210 @@ From transistor as vaccum tubes and computer as mega tons room to nano transiste
 
 ## Footbal
 
+Mathematics (5 topics)
+
+The Accidental Discovery of Zero - How ancient India revolutionized math
+The Fermat's Last Theorem Drama - 358 years, a secret proof, and Andrew Wiles
+The Monty Hall Problem - How a game show stumped mathematicians
+Ramanujan's Notebooks - The genius who knew infinity without formal training
+The Millennium Problems - Million-dollar math puzzles still unsolved
+
+Physics (5 topics)
+
+The Manhattan Project's Hidden Computers - Women who calculated the atomic bomb
+Schrödinger's Cat Paradox - The thought experiment that broke physics
+The Race to Absolute Zero - Chasing the coldest temperature possible
+Einstein's Biggest Blunder - The cosmological constant he regretted (then didn't)
+The Discovery of Gravitational Waves - 100 years from prediction to proof
+
+Astronomy (4 topics)
+
+The Planet That Wasn't There - How Pluto lost its status
+Vera Rubin and Dark Matter - The astronomer they overlooked for Nobel
+The Wow! Signal Mystery - 72 seconds that still puzzle scientists
+Challenger's Lost Lesson - O-rings, warnings ignored, and engineering ethics
+
+Software Engineering (5 topics)
+
+The First Computer Bug - The actual moth that started it all
+Stack Overflow's Creation - Two developers tired of bad forums
+The Morris Worm Accident - The first major internet virus by mistake
+Margaret Hamilton's Moon Code - The woman who saved Apollo 11
+Linux's Angry Birth - Linus Torvalds' email that changed computing
+
+AI & Technology (5 topics)
+
+The Turing Test's Hidden Purpose - It wasn't about AI at all
+AlphaGo's Move 37 - The AI move that shocked Go masters
+CAPTCHA's Double Life - How you've been digitizing books without knowing
+The AI That Learned to Lie - Facebook's chatbots they had to shut down
+Geoffrey Hinton's Backpropagation Rejection - Rejected for years, then changed AI forever
+
+Sports & Football (5 topics)
+
+Moneyball's Real Story - How math invaded baseball front offices
+The Miracle on Ice - 1980 US hockey team's impossible win
+Leicester City's 5000-to-1 Triumph - The greatest underdog story in football
+Fosbury Flop Revolution - The backward jump that changed high jump forever
+The Hand of God & The Goal of the Century - Maradona's 5 minutes of infamy and glory
+
+Marvel Universe (3 topics)
+
+Stan Lee's Stolen Credit - Jack Kirby and the real creators of Marvel
+Iron Man's Resurrection - How a B-list hero saved Marvel Studios
+Spider-Man's Almost Sale - The deal that almost killed the MCU
+
+DC Universe (3 topics)
+
+Superman's Original Powers - He couldn't even fly at first
+The Death and Return of Superman - The comic that broke sales records
+Batman's Dark Rebirth - How Frank Miller saved a dying character
+
+Harry Potter (2 topics)
+
+J.K. Rowling's Rejected Manuscript - 12 publishers who said no to billions
+The Secret Room of Requirement - Hidden details fans missed for years
+
+Friends (2 topics)
+
+The Central Perk Coffee Shop Secret - Why orange couches changed TV sitcoms
+The Finale That Almost Didn't Happen - Behind-the-scenes of TV's biggest goodbye
+
+American History (3 topics)
+
+The Forgotten Founding Father - Alexander Hamilton's unbelievable life
+The Night WW2 Actually Ended - Time zones, confusion, and double VE-Days
+Apollo 13's Duct Tape Solution - Engineering improvisation that saved lives
+
+Indian History (3 topics)
+
+Chhatrapati Shivaji's Navy - India's forgotten maritime empire
+The Real Story of Partition Trains - 1947's midnight chaos and tragedy
+Chandragupta Maurya's Rise - From nothing to India's first empire
+
+World Wars (2 topics)
+
+The Christmas Truce of 1914 - Enemies playing football in No Man's Land
+Operation Mincemeat - The corpse that fooled Hitler
+
+Anime & Pop Culture (2 topics)
+
+Studio Ghibli's Near Bankruptcy - How Spirited Away saved anime's greatest studio
+Dragon Ball's Global Takeover - From Japanese manga to worldwide phenomenon
+
+Economics & Finance (2 topics)
+
+The Tulip Mania Bubble - When flowers cost more than houses in 1637
+The 2008 Crisis Cassandras - The few who saw it coming and were ignored
+
+Engineering (Bonus alternatives)
+
+The Tacoma Narrows Bridge Collapse - When resonance destroyed "Galloping Gertie"
+The Hoover Dam's Concrete Secret - Still curing 90 years later
+Millau Viaduct's Impossible Build - The tallest bridge pier in the world
 
 
-Jai hanuman
+## Final 47 Topics
+STEM & Technology (10)
 
+Mathematics
+
+Physics
+
+Astronomy & Space
+
+Chemistry
+
+AI & Machine Learning
+
+Software Engineering
+
+Medicine
+
+Engineering
+
+Technology Explained (WiFi, GPS, planes, chips)
+
+Quantum Science & Future Tech ⭐ (new)
+
+Entertainment — Movies & TV (8)
+
+Marvel
+
+DC
+
+Star Wars
+
+Harry Potter
+
+Lord of the Rings
+
+Friends
+
+Breaking Bad
+
+Anime
+
+Entertainment — Music & Gaming (4)
+
+Music Legends
+
+K-pop & BTS
+
+Gaming History
+
+Hollywood & Film Making Secrets ⭐ (new)
+
+Money & Markets (3)
+
+Stock Market
+
+Personal Finance
+
+Cryptocurrency & Blockchain
+
+Sports (4)
+
+(Trimmed to avoid demographic skew)
+26. Football (Soccer)
+27. Basketball (NBA)
+28. F1 & Automobiles
+29. Olympic & Athletic Legends ⭐ (new)
+
+History (5)
+
+American History
+
+Indian History & Culture
+
+European History
+
+Wars (World Wars + others)
+
+Ancient Civilizations ⭐ (new, replaces mythology)
+
+Business & Innovation (3)
+
+Brand Stories
+
+Founders & Entrepreneurs
+
+Mind & Human Behavior (3)
+
+Psychology
+
+Philosophy & Ethics
+
+Science & Nature (3)
+
+Evolution & Biology
+
+Environment & Earth
+
+Wildlife & Animal Intelligence
+
+Mystery & Culture (5)
+
+True Crime
+
+Books & Literature

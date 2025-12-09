@@ -1,12 +1,14 @@
+using RandomReads.Models;
+
 namespace RandomReads.service;
 
 public class StoryInput
     {
         public List<string> StoryLine { get; set; }
-        public string Topic { get; set; }
+        public Topic Topic { get; set; }
         public string? customPrompt { get; set; }
 
-        public StoryInput(List<string> storyLine, string topic, string? customPrompt = null)
+        public StoryInput(List<string> storyLine, Topic topic, string? customPrompt = null)
         {
             StoryLine = storyLine;
             Topic = topic;
