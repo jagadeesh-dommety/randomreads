@@ -18,10 +18,12 @@ Read
   - author
   - isAigenerated
   - Topic
-  - Likes count
-  - Share count
-  - Report count
   - Createdat
+
+Readstats
+   - Likes count
+   - Share count
+   - Report count
 
 UserActivity
   - 
@@ -51,3 +53,10 @@ principalId = "809a74ca-69da-4063-a0c1-6a612ec86415" # This is the object ID of 
 az cosmosdb sql role assignment create --account-name randomreads --resource-group randomreads --scope "/" --principal-id 809a74ca-69da-4063-a0c1-6a612ec86415 --role-definition-id 00000000-0000-0000-0000-000000000002
 
 //az cosmosdb sql role assignment create --resource-group randomreads  --account-name randomreads   --scope "/"  --principal-id "72c9f7fd-e082-40ab-8513-8a7fb5cb3046" --role-definition-id "00000000-0000-0000-0000-000000000002"
+
+//az role assignment create \
+  --assignee 809a74ca-69da-4063-a0c1-6a612ec86415 \
+  --role "Cognitive Services OpenAI Contributor" \
+  --scope /subscriptions/9487cd81-9520-47e2-941d-2cfc4dda3b30/resourceGroups/randomreads/providers/Microsoft.CognitiveServices/accounts/randomreads-content-resource
+
+  /subscriptions/9487cd81-9520-47e2-941d-2cfc4dda3b30/resourceGroups/randomreads/providers/Microsoft.CognitiveServices/accounts/randomreads-content-resource

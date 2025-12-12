@@ -38,7 +38,10 @@ namespace RandomReads.CosmosDB
             }
             try
             {
-                cosmosClient = new CosmosClient(endpointUrl, new DefaultAzureCredential());
+                cosmosClient = new CosmosClient(endpointUrl, new DefaultAzureCredential(new DefaultAzureCredentialOptions
+                {
+                    ManagedIdentityClientId = Constants.ManagedIdentityClientId
+                }));
                 database = await cosmosClient.CreateDatabaseIfNotExistsAsync(databaseId);
                 container = await database.CreateContainerIfNotExistsAsync(containerId, partitionKeyPath);
             }
@@ -282,7 +285,7 @@ namespace RandomReads.CosmosDB
                     return result.FirstOrDefault();
                 }
             }
-            
+
             return false;
         }
 

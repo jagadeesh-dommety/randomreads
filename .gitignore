@@ -4,6 +4,7 @@
 bin/
 obj/
 out/
+publish_output/
 
 # User-specific files
 *.user

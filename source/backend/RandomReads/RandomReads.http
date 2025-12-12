@@ -1,6 +1,15 @@
-@RandomReads_HostAddress = http://localhost:5237
+# GET request
+curl -X GET "{{RandomReads_HostAddress}}/weatherforecast/" \
+    -H "Accept: application/json"
 
-GET {{RandomReads_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
+# POST request
+curl -X POST "https://randomreads-hghhducwbxexbjft.westus3-01.azurewebsites.net/generatebystoryline" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{
+         "storyLine": [
+            "single photon from the Sun’s core to your eye — taking 100,000 years to escape"
+         ],
+         "topic": "Physics",
+         "customPrompt": ""
+        }'

@@ -21,7 +21,10 @@ public class ContentGenAgent
 
     public ContentGenAgent()
     {
-        projectClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential());
+        projectClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential(new DefaultAzureCredentialOptions
+                {
+                    ManagedIdentityClientId = Constants.ManagedIdentityClientId
+                }));
         agentReference = new AgentReference(agentName, agentVersion);
         responseClient = projectClient.OpenAI.GetProjectResponsesClientForAgent(agentReference, conversation_id);
     }
@@ -35,6 +38,7 @@ public class ContentGenAgent
 
             try
             {
+                System.Diagnostics.Trace.TraceInformation($"Processing line: {line}");
                 var response = responseClient.CreateResponse(prompt);
 
                 // Extract curator output (usually OutputItems[1])
@@ -54,7 +58,13 @@ public class ContentGenAgent
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error processing line: {line}. Exception: {ex.Message}");
+                
+                Console.WriteLine("Exception occurred while generating content.");
+                Console.WriteLine($"Error processing line: {line}. Exception: {ex.Message}");          
+                System.Diagnostics.Trace.TraceInformation("Exception occurred while generating content.");
+                System.Diagnostics.Trace.TraceInformation($"Error processing line: {line}. Exception: {ex.Message}");
+                throw new Exception($"Error calling ai {ex} and {ex.StackTrace} and {ex.InnerException}", ex);
+;
             }
 
         }

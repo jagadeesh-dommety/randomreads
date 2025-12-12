@@ -43,22 +43,20 @@ namespace RandomReads
             // Custom service registrations
             //services.ConfigureApplicationServices(Configuration);
         }
-
+        
         // Configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            if (env.IsDevelopment())
-            {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            
             app.UseCors("AllowAll");
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            // app.UseMiddleware<TelemetryMiddleware>();
+            app.UseMiddleware<LoggingMiddleware>();
             // app.UseMiddleware<RequestContextMiddleware>();
             app.UseEndpoints(endpoints =>
             {
