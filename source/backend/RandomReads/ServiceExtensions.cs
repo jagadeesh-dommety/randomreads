@@ -13,6 +13,7 @@ public static class ServiceExtensions
             return new CosmosReadItem(cosmosfollowerconfig, logger);
         });
         services.AddSingleton<ContentGenService>();
+        services.AddSingleton<ReadService>();
 
         return services;
     }

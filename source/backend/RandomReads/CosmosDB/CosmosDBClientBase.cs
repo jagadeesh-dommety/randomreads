@@ -310,11 +310,11 @@ namespace RandomReads.CosmosDB
         /// <param name="ids">The IDs to use.</param>
         /// <param name="cancellation">Cancellation token</param>
         /// <returns>The read list of items.</returns>
-        public async Task<Dictionary<string, T>> ReadManyByPartitionId(
+        public async Task<IEnumerable<T>> ReadManyByPartitionId(
     PartitionKey partitionKey, int count,
     CancellationToken cancellation = default)
         {
-            var results = new Dictionary<string, T>();
+            var results = new List<T>();
 
             try
             {
@@ -332,7 +332,7 @@ namespace RandomReads.CosmosDB
                     FeedResponse<T> currentResultSet = await queryResultSetIterator.ReadNextAsync(cancellation);
                     foreach (T result in currentResultSet)
                     {
-                        results.Add(result.Id, result);
+                        results.Add(result);
                     }
                 }
             }

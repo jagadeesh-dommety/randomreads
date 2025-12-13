@@ -39,7 +39,7 @@ public enum Topic
     AmericanHistory,
     IndianHistory,
     EuropeanHistory,
-    WorldWars,
+    WorldWarsConflicts,
     AncientCivilizations,
 
     BrandEmpires,
@@ -97,7 +97,7 @@ public static class TopicExtensions
             { Topic.AmericanHistory, "American History" },
             { Topic.IndianHistory, "Indian History" },
             { Topic.EuropeanHistory, "European History" },
-            { Topic.WorldWars, "World Wars" },
+            { Topic.WorldWarsConflicts, "World Wars & Global Conflicts" },
             { Topic.AncientCivilizations, "Ancient Civilizations" },
 
             { Topic.BrandEmpires, "Brand Empires" },

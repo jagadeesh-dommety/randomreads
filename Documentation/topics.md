@@ -486,109 +486,66 @@ Engineering (Bonus alternatives)
 The Tacoma Narrows Bridge Collapse - When resonance destroyed "Galloping Gertie"
 The Hoover Dam's Concrete Secret - Still curing 90 years later
 Millau Viaduct's Impossible Build - The tallest bridge pier in the world
+1. **STEM & Technology (10)**  
+    1.1. Mathematics  
+    1.2. Physics  
+    1.3. Astronomy & Space  
+    1.4. Chemistry  
+    1.5. AI & Machine Learning  
+    1.6. Software Engineering  
+    1.7. Medicine  
+    1.8. Engineering  
+    1.9. Technology Explained (WiFi, GPS, planes, chips)  
+    1.10. Quantum Science & Future Tech ⭐ (new)  
 
+2. **Entertainment — Movies & TV (8)**  
+    2.1. Marvel  
+    2.2. DC  
+    2.3. Star Wars  
+    2.4. Harry Potter  
+    2.5. Lord of the Rings  
+    2.6. Friends  
+    2.7. Breaking Bad  
+    2.8. Anime  
 
-## Final 47 Topics
-STEM & Technology (10)
+3. **Entertainment — Music & Gaming (4)**  
+    3.1. Music Legends  
+    3.2. K-pop & BTS  
+    3.3. Gaming History  
+    3.4. Hollywood & Film Making Secrets ⭐ (new)  
 
-Mathematics
+4. **Money & Markets (3)**  
+    4.1. Stock Market  
+    4.2. Personal Finance  
+    4.3. Cryptocurrency & Blockchain  
 
-Physics
+5. **Sports (4)**  
+    5.1. Football (Soccer)  
+    5.2. Basketball (NBA)  
+    5.3. F1 & Automobiles  
+    5.4. Olympic & Athletic Legends ⭐ (new)  
 
-Astronomy & Space
+6. **History (5)**  
+    6.1. American History  
+    6.2. Indian History & Culture  
+    6.3. European History  
+    6.4. Wars (World Wars + others)  
+    6.5. Ancient Civilizations ⭐ (new, replaces mythology)  
 
-Chemistry
+7. **Business & Innovation (3)**  
+    7.1. Brand Stories  
+    7.2. Founders & Entrepreneurs  
+    7.3. Mind & Human Behavior  
 
-AI & Machine Learning
+8. **Mind & Human Behavior (3)**  
+    8.1. Psychology  
+    8.2. Philosophy & Ethics  
 
-Software Engineering
+9. **Science & Nature (3)**  
+    9.1. Evolution & Biology  
+    9.2. Environment & Earth  
+    9.3. Wildlife & Animal Intelligence  
 
-Medicine
-
-Engineering
-
-Technology Explained (WiFi, GPS, planes, chips)
-
-Quantum Science & Future Tech ⭐ (new)
-
-Entertainment — Movies & TV (8)
-
-Marvel
-
-DC
-
-Star Wars
-
-Harry Potter
-
-Lord of the Rings
-
-Friends
-
-Breaking Bad
-
-Anime
-
-Entertainment — Music & Gaming (4)
-
-Music Legends
-
-K-pop & BTS
-
-Gaming History
-
-Hollywood & Film Making Secrets ⭐ (new)
-
-Money & Markets (3)
-
-Stock Market
-
-Personal Finance
-
-Cryptocurrency & Blockchain
-
-Sports (4)
-
-(Trimmed to avoid demographic skew)
-26. Football (Soccer)
-27. Basketball (NBA)
-28. F1 & Automobiles
-29. Olympic & Athletic Legends ⭐ (new)
-
-History (5)
-
-American History
-
-Indian History & Culture
-
-European History
-
-Wars (World Wars + others)
-
-Ancient Civilizations ⭐ (new, replaces mythology)
-
-Business & Innovation (3)
-
-Brand Stories
-
-Founders & Entrepreneurs
-
-Mind & Human Behavior (3)
-
-Psychology
-
-Philosophy & Ethics
-
-Science & Nature (3)
-
-Evolution & Biology
-
-Environment & Earth
-
-Wildlife & Animal Intelligence
-
-Mystery & Culture (5)
-
-True Crime
-
-Books & Literature
+10. **Mystery & Culture (5)**  
+     10.1. True Crime  
+     10.2. Books & Literature  

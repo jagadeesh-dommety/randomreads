@@ -14,17 +14,19 @@ public class ContentGenService
 
     public async Task<IActionResult> GenerateContentByStoryLine(StoryInput input)
     {
+
         Console.WriteLine("Generating content based on storyline.");
         System.Diagnostics.Trace.TraceInformation("Generating content based on storyline.");
-        List<ReadItem> readItems = _contentGenAgent.GenerateContentByStoryLine(input);
-         System.Diagnostics.Trace.TraceInformation("Generating content generated based on storyline.");
-        foreach (var item in readItems)
+        foreach (var line in input.StoryLine)
         {
+         ReadItem read = await _contentGenAgent.GenerateContentByStoryLine(line, input.Topic);
+         System.Diagnostics.Trace.TraceInformation("Content generated based on storyline.");
+
             Console.WriteLine("adding to db");
             System.Diagnostics.Trace.TraceInformation("adding to db");
             try
             {
-                var response = await  _cosmosReadItem.CreateItemAsync(item);
+                var response = await  _cosmosReadItem.CreateItemAsync(read);
 
             }
             catch (Exception ex)
@@ -32,6 +34,6 @@ public class ContentGenService
                 throw new Exception($"Error adding item to Cosmos DB {ex} and {ex.StackTrace} and {ex.InnerException}", ex);
             } 
         }
-        return new OkObjectResult(readItems);
+        return new OkObjectResult("Content generation completed successfully.");
     }
 }
