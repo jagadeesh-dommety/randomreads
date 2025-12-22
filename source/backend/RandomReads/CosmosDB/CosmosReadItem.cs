@@ -13,6 +13,6 @@ public class CosmosReadItem : CosmosDbClientBase<ReadItem>
 
         public override PartitionKey GetPartionKeyFromDocument(ReadItem document)
         {
-            return new PartitionKey(document.Id);
+            return new PartitionKey((int)document.Topic);
         }
     }

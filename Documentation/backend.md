@@ -46,6 +46,14 @@ Topic
 based on useractivity and post-type get the topics recommended
     
 
+Add slug to the cosmos db - read item
+
+---------------------------------------
+Ensure there are no repeat of the articles, vectorization - 
+
+
+
+
 resourceGroupName='randomreads'
 accountName='<randomreads>'
 readOnlyRoleDefinitionId = '00000000-0000-0000-0000-000000000002' # This is the ID of the Cosmos DB Built-in Data contributor role definition

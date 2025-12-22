@@ -1,5 +1,6 @@
 using System;
 using System.ClientModel;
+using System.Numerics;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Azure.AI.OpenAI;
@@ -7,6 +8,8 @@ using Azure.AI.Projects;
 using Azure.AI.Projects.OpenAI;
 using Azure.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos.Serialization.HybridRow;
+using OpenAI;
 using RandomReads.Models;
 
 namespace RandomReads.service;
@@ -28,6 +31,28 @@ public class ContentGenAgent
         agentReference = new AgentReference(agentName, agentVersion);
     }
 
+    public static async Task<ReadOnlyMemory<float>> CreateEmbeddings(string content)
+    {
+        var embeddingsClient = new AzureOpenAIClient(
+            new Uri(Constants.embeddingsEndpoint),
+            new DefaultAzureCredential(new DefaultAzureCredentialOptions
+            {
+                ManagedIdentityClientId = Constants.ManagedIdentityClientId
+            })
+        );
+        var client = embeddingsClient.GetEmbeddingClient(
+            Constants.embeddingsModel
+        );
+
+        // 3. Generate embeddings
+        var embeddingResponse = await client.GenerateEmbeddingAsync(content);
+
+        // 4. Access the vector data
+        ReadOnlyMemory<float> vector = embeddingResponse.Value.ToFloats();
+        Console.WriteLine($"Generated embedding with {vector.Length} dimensions."); Console.WriteLine($"Embedding created with dimension: {vector.Length}");
+        return vector;
+    }
+
     public async Task<ReadItem> GenerateContentByStoryLine(string line, Topic topic)
     {
         string prompt = $"Story line is {line}";
@@ -44,9 +69,9 @@ public class ContentGenAgent
 
             // Extract curator output (usually OutputItems[1])
             string curatorText = ContentGenUtils.ExtractCuratorText(response.Value);
-
             // Parse title + content
             (string title, string content) = ContentGenUtils.ParseGeneratedContent(curatorText);
+            float[] embeddingArray = CreateEmbeddings(curatorText).Result.ToArray();
 
             return new ReadItem(
                 Id: Guid.NewGuid().ToString(),

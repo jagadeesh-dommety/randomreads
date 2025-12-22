@@ -16,8 +16,9 @@ public class ContentGenerateController : ControllerBase
 
     [HttpGet]
     [Route("randomgenerate")]
-    public IEnumerable<string> Get()
+    public async Task<IEnumerable<string>> Get()
     {
+        await _contentGenService.createEmbeddingsFromTextAsync();
         _logger.LogInformation("Generating random content.");
         var contents = new List<string>
         {

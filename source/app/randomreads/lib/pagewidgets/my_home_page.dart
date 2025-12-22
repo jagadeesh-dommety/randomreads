@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   
   Future<void> _loadReads() async {
     try {
-      final reads = await _readsService.fetchsamplereaditems();
+      final reads = await _readsService.fetchReads();
       if (mounted) {
         setState(() {
           _readsList = reads;
@@ -162,8 +162,8 @@ void _handleSwipeRight() {
 void _handleSwipeLeft() {
   if (_currentReadIndex < _readsList.length - 1) {
     HapticFeedback.mediumImpact();
-    if (_currentReadIndex < _readsList.length - 2) {
-      _readsService.fetchsamplereaditems().then((newReads) {
+    if (_currentReadIndex > _readsList.length - 2) {
+      _readsService.fetchReads().then((newReads) {
         setState(() {
           _readsList.addAll(newReads);
         });

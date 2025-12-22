@@ -1,3 +1,4 @@
+
 using RandomReads.Models;
 
 public record ReadItem : CosmosItem
@@ -5,6 +6,7 @@ public record ReadItem : CosmosItem
     public readonly string Title;
     public readonly string Content;
     public string Author { get; set; } = "";
+    public string Slug => ContentUtils.GenerateSlug(Title);
     public bool IsAiGenerated { get; set; } = true;
     public readonly Topic Topic;
     public readonly DateTime CreatedAt;
