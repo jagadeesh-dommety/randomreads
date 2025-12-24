@@ -10,17 +10,19 @@ public class EmbeddingService
         _embeddingRepo = embeddingRepo;
     }
 
-    public async Task CreateEmbeddingIfNotSimilarAsync(ReadItem readItem, float[] embedding, double similarityThreshold = 0.80)
+    public async Task<bool> CreateEmbeddingIfNotSimilarAsync(ReadItem readItem, float[] embedding, double similarityThreshold = 0.80)
     {
         bool exists = await HasSimilarEmbeddingAsync(readItem, embedding, similarityThreshold);
         if (!exists)
         {
             EmbeddingItem embeddingItem = new EmbeddingItem(readItem.Id, readItem.Topic, embedding);
             await _embeddingRepo.CreateItemAsync(embeddingItem);
+            return true;
         }
         else
         {
             Console.WriteLine($"Similar embedding already exists for item id: {readItem.Id}, skipping.");
+            return false;
         }
     }
 

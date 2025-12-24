@@ -18,6 +18,10 @@ public class ContentGenService
         this.embeddingService = embeddingService;
     }
 
+    /// <summary>
+    /// Creates embeddings - for all read items in the database based on a specific topic
+    /// </summary>
+    /// <returns></returns>
     public async Task createEmbeddingsFromTextAsync()
     {
 
@@ -41,26 +45,41 @@ public class ContentGenService
     }
     public async Task<IActionResult> GenerateContentByStoryLine(StoryInput input)
     {
-
         Console.WriteLine("Generating content based on storyline.");
         System.Diagnostics.Trace.TraceInformation("Generating content based on storyline.");
+
         foreach (var line in input.StoryLine)
         {
-            ReadItem read = await _contentGenAgent.GenerateContentByStoryLine(line, input.Topic);
-            System.Diagnostics.Trace.TraceInformation("Content generated based on storyline.");
-
-            Console.WriteLine("adding to db");
-            System.Diagnostics.Trace.TraceInformation("adding to db");
             try
             {
-                var response = await _cosmosReadItem.CreateItemAsync(read);
+                // Generate content based on storyline
+                ReadItem read = await _contentGenAgent.GenerateContentByStoryLine(line, input.Topic);
+                System.Diagnostics.Trace.TraceInformation("Content generated based on storyline.");
 
+                // Create embeddings for the generated content
+                var embedding = await ContentGenAgent.CreateEmbeddings($"{read.Title}  {read.Content}");
+                EmbeddingItem embeddingItem = new EmbeddingItem(read.Id, read.Topic, embedding.ToArray());
+
+                // Save embedding if not similar
+                bool foundSimilarRead = await embeddingService.CreateEmbeddingIfNotSimilarAsync(read, embedding.ToArray(), 0.80);
+
+                // Add the generated content to Cosmos DB
+                if (foundSimilarRead)
+                await _cosmosReadItem.CreateItemAsync(read);
+                else
+                {
+                    Console.WriteLine($"Similar content already exists for storyline: {line}, skipping saving to database.");
+                    System.Diagnostics.Trace.TraceInformation($"Similar content already exists for storyline: {line}, skipping saving to database.");
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error adding item to Cosmos DB {ex} and {ex.StackTrace} and {ex.InnerException}", ex);
+                Console.WriteLine($"Error processing storyline. Exception: {ex.Message}");
+                System.Diagnostics.Trace.TraceError($"Error processing storyline. Exception: {ex}");
+                return new BadRequestObjectResult($"Error processing storyline: {ex.Message}");
             }
         }
+
         return new OkObjectResult("Content generation completed successfully.");
     }
 }

@@ -71,8 +71,6 @@ public class ContentGenAgent
             string curatorText = ContentGenUtils.ExtractCuratorText(response.Value);
             // Parse title + content
             (string title, string content) = ContentGenUtils.ParseGeneratedContent(curatorText);
-            float[] embeddingArray = CreateEmbeddings(curatorText).Result.ToArray();
-
             return new ReadItem(
                 Id: Guid.NewGuid().ToString(),
                 content: content,
