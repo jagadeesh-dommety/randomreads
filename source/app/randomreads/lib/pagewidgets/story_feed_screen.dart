@@ -4,11 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:randomreads/models/readitem.dart';
-import 'package:randomreads/pagewidgets/randomreads_app_bar.dart';
+import 'package:randomreads/appbars/randomreads_app_bar.dart';
 import 'package:randomreads/pagewidgets/reading_content.dart';
 import 'package:randomreads/pagewidgets/reading_progress_indicator.dart';
-import 'package:randomreads/pagewidgets/search_topic_screen.dart';
 import 'package:randomreads/pagewidgets/snackbar_helper.dart';
+import 'package:randomreads/appbars/topic_app_bar.dart';
 import 'package:randomreads/services/getreadsservice.dart';
 
 class StoryFeedScreen extends StatefulWidget {
@@ -38,6 +38,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
   bool _isSaved = false;
   bool _isLoading = true;
   int _fontSizeIndex = 1; // 0: Small, 1: Medium, 2: Large
+  String _currentSort = 'newest';  // Default sort for topics (or 'relevance' if preferred)
 
   // Constants
   static const List<double> _fontSizes = [12.0, 14.0, 16.0];
@@ -279,7 +280,15 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               slivers: [
                 // Reusable SliverAppBar (replace with RandomreadsAppBar if updated to take title/toggleTheme)
-                RandomreadsAppBar(theme: theme),
+                (widget.topic == null || widget.topic!.isEmpty) ? 
+                RandomreadsAppBar(theme: theme) :
+                TopicAppBar(title: widget.topic!, theme: theme, onSortSelected: (sorttype) {
+                  HapticFeedback.lightImpact();
+                  setState(() {
+                    _currentSort = sorttype;
+                  });
+                  _loadReads();
+                },),
                 SliverToBoxAdapter(
                   child: Center(
                     child: AnimatedSwitcher(

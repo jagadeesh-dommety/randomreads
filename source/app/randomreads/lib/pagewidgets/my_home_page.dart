@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:randomreads/models/readitem.dart';
-import 'package:randomreads/pagewidgets/randomreads_app_bar.dart';
+import 'package:randomreads/appbars/randomreads_app_bar.dart';
 import 'package:randomreads/pagewidgets/reading_content.dart';
 import 'package:randomreads/pagewidgets/reading_progress_indicator.dart';
 import 'package:randomreads/pagewidgets/snackbar_helper.dart';
