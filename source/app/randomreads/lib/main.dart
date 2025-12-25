@@ -35,7 +35,7 @@ class _RandomReadsAppState extends State<RandomReadsApp> {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.grey,
           brightness: Brightness.light,
         ).copyWith(
           surface: const Color(0xFFFAF9F6),
@@ -61,7 +61,7 @@ class _RandomReadsAppState extends State<RandomReadsApp> {
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.grey,
           brightness: Brightness.dark,
         ).copyWith(
           surface: const Color(0xFF121212),

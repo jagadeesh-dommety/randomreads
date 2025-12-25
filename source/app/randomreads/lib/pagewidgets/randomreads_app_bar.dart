@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:randomreads/models/topic.dart';
+import 'package:randomreads/pagewidgets/search_topic_screen.dart';
+import 'package:randomreads/pagewidgets/story_feed_screen.dart';
 
 class RandomreadsAppBar extends StatelessWidget {
   const RandomreadsAppBar({
@@ -26,9 +29,36 @@ class RandomreadsAppBar extends StatelessWidget {
       actions: [
         IconButton(
             onPressed: () {}, icon: const Icon(Icons.favorite_border_outlined)),
-        IconButton(onPressed: () {}, icon: const Icon(Icons.search_outlined)),
+        IconButton(onPressed: () async {
+          final selectedTopic = await Navigator.of(context).push<String>(
+            MaterialPageRoute(builder: (context) => const SearchTopicScreen()),
+          );
+          if (selectedTopic != null) {
+            // Handle the selected topic (e.g., navigate to topic feed)
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => TopicFeedScreen(topicName: selectedTopic)),
+            );
+          }
+        }, icon: const Icon(Icons.search_outlined)),
         const SizedBox(width: 4),
       ],
     );
+  }
+}
+
+class TopicFeedScreen extends StatefulWidget {
+  final String topicName;
+
+  const TopicFeedScreen({super.key, required this.topicName});
+
+  @override
+  State<TopicFeedScreen> createState() => _TopicFeedScreenState();
+}
+class _TopicFeedScreenState extends State<TopicFeedScreen> {
+  @override
+  Widget build(BuildContext context) {
+    String topicName = widget.topicName;
+    String enumTopic = TopicUtils.getEnumFromDisplayName(topicName);
+    return StoryFeedScreen(title: widget.topicName, topic: enumTopic);
   }
 }

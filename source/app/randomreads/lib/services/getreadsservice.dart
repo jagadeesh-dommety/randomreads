@@ -21,8 +21,8 @@ class Getreadsservice {
     return data.map((e) => ReadItem.fromJson(e)).toList();
   }
 
-  Future<List<ReadItem>> fetchReadsByTopic(String topic) async {
-    final url = "${Constants.apiBaseUrl}${Constants.fetchreadsbytopic}$topic";
+  Future<List<ReadItem>> fetchReadsByTopic(String topic, {int count = 5}) async {
+    final url = "${Constants.fetchreadsbytopic}$topic/$count";
     final response = await HttpService.get(url);
     final List<dynamic> data = jsonDecode(response.body);
     return data.map((e) => ReadItem.fromJson(e)).toList();

@@ -10,4 +10,3 @@
     "topic": "Physics",
     "customPrompt": ""
 }
-```

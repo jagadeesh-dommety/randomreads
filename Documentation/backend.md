@@ -46,11 +46,17 @@ Topic
 based on useractivity and post-type get the topics recommended
     
 
-Add slug to the cosmos db - read item
+Add slug to the cosmos db - read item - completed
 
 ---------------------------------------
-Ensure there are no repeat of the articles, vectorization - 
+Ensure there are no repeat of the articles, vectorization - completed
 
+--------------------------------------
+
+Search for topic - 
+
+Search for story - 
+Azure ai search - so users can search relevant stories (need more time and money)
 
 
 

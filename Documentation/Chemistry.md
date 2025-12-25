@@ -1,24 +1,24 @@
-The Day Chemistry Proved Air Is Not Nothing – How invisible gases shattered ancient beliefs.
+"The Day Chemistry Proved Air Is Not Nothing – How invisible gases shattered ancient beliefs.",
 
-When Fire Learned to Speak in Colors – The secret language of flames and metal atoms.
+"When Fire Learned to Speak in Colors – The secret language of flames and metal atoms.",
 
-The Chemist Who Weighed the Invisible – Measuring atoms before atoms were proven real.
+"The Chemist Who Weighed the Invisible – Measuring atoms before atoms were proven real.",
 
-How a Broken Thermometer Changed Medicine – The chemistry behind fever and temperature.
+"How a Broken Thermometer Changed Medicine – The chemistry behind fever and temperature.",
 
-The Battle to Name Oxygen – How politics, language, and ego shaped scientific truth.
+"The Battle to Name Oxygen – How politics, language, and ego shaped scientific truth.",
 
-When Lead Poisoning Nearly Ended the Roman Empire – Chemistry’s silent role in history’s collapse.
+"When Lead Poisoning Nearly Ended the Roman Empire – Chemistry’s silent role in history’s collapse.",
 
-The Gas That Makes You Laugh—and Can Kill You – The strange dual life of nitrous oxide.
+"The Gas That Makes You Laugh—and Can Kill You – The strange dual life of nitrous oxide.",
 
-The First Time Humans Froze Time – How chemistry made food preservation possible.
+"The First Time Humans Froze Time – How chemistry made food preservation possible.",
 
-Why Salt Once Sparked Wars – The chemical reason civilizations fought over NaCl.
+"Why Salt Once Sparked Wars – The chemical reason civilizations fought over NaCl.",
 
-The Chemist Who Invented Color on Demand – Synthetic dyes and the death of natural pigments.
-
-How Chemistry Explained Why Things Smell – The molecular lock-and-key of your nose.
+"The Chemist Who Invented Color on Demand – Synthetic dyes and the death of natural pigments.",
+------------- done
+"How Chemistry Explained Why Things Smell – The molecular lock-and-key of your nose."
 
 The Day Glass Became Transparent to Heat – Chemistry that changed architecture forever.
 
