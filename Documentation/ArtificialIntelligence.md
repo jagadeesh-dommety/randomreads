@@ -1,17 +1,14 @@
 Turing's Forbidden Code: The Wartime Machine That Dreamed of Souls A reclusive genius builds the first AI blueprint amid Nazi codebreakers, only for his creation to predict his own downfall—blurring man and machine in a race against extinction.
-The Dartmouth Bet: When 10 Nerds Ignited the AI Inferno 1956's summer workshop promises god-like machines, but egos clash and funding dries up—until a forgotten memo resurfaces, revealing the spark that still burns today.
-Deep Blue's Midnight Checkmate: IBM's Rogue AI That Taught Us Fear
-1997's chess apocalypse isn't just a win—it's Kasparov's breakdown exposing AI's cold logic. Inside the lab where humans first lost to silicon.
-
-The Perceptron Plot: Frank Rosenblatt's 1950s Neural Net Scandal
-A simple "brain" machine dazzles the Pentagon, then flops spectacularly—unearthing the first AI hype cycle and its buried military secrets.
-
-LISP's Lost Empire: John McCarthy's Lisp Machines and the AI Utopia That Crumbled
-In the 1980s, custom hardware dreams of sentient code, but Japan's chip invasion kills it—leaving ghosts in today's Lisp revival.
-
-Expert Systems' Corporate Coup: From MYCIN to the Boardroom Backlash
-1970s AI doctors outsmart MDs, but buggy diagnoses trigger lawsuits—exposing the fragile line between helper and hazard.
-
+"The Dartmouth Bet: When 10 Nerds Ignited the AI Inferno 1956's summer workshop promises god-like machines, but egos clash and funding dries up—until a forgotten memo resurfaces, revealing the spark that still burns today.",
+"Deep Blue's Midnight Checkmate: IBM's Rogue AI That Taught Us Fear",
+"1997's chess apocalypse isn't just a win—it's Kasparov's breakdown exposing AI's cold logic. Inside the lab where humans first lost to silicon.",
+"The Perceptron Plot: Frank Rosenblatt's 1950s Neural Net Scandal",
+"A simple "brain" machine dazzles the Pentagon, then flops spectacularly—unearthing the first AI hype cycle and its buried military secrets.",
+"LISP's Lost Empire: John McCarthy's Lisp Machines and the AI Utopia That Crumbled",
+"In the 1980s, custom hardware dreams of sentient code, but Japan's chip invasion kills it—leaving ghosts in today's Lisp revival.",
+"Expert Systems' Corporate Coup: From MYCIN to the Boardroom Backlash",
+"1970s AI doctors outsmart MDs, but buggy diagnoses trigger lawsuits—exposing the fragile line between helper and hazard."
+-------------------------
 The First AI Winter: DARPA's $1B Freeze and the Rebels Who Defrosted It
 1974's funding apocalypse buries dreams; underground hackers bootstrap neural nets, setting the stage for the 90s thaw.
 

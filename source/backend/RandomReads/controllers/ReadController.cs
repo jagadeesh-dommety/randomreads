@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RandomReads.Models;
 
@@ -5,12 +6,12 @@ using RandomReads.Models;
 public class ReadController : ControllerBase
 {
     private readonly ReadService readService;
-
     public ReadController(ReadService readService)
     {
         this.readService = readService;
     }
 
+    [Authorize]
     [HttpGet]
     [Route("readitem/{id}")]
     public async Task<IActionResult> GetReadItemById(string id, Topic topic)
@@ -23,6 +24,7 @@ public class ReadController : ControllerBase
         return new OkObjectResult(readItem);
     }
 
+    [Authorize]
     [HttpGet]
     [Route("readitems/{topic}/{count}")]
     public async Task<IActionResult> GetReadsByTopic(Topic topic, int count)

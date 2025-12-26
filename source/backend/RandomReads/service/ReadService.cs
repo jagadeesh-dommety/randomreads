@@ -3,10 +3,12 @@ using RandomReads.Models;
 public class ReadService
 {
     private readonly CosmosReadItem _cosmosReadItem;
+    private readonly CustomRequestContext customRequestContext;
 
-    public ReadService(CosmosReadItem cosmosReadItem)
+    public ReadService(CosmosReadItem cosmosReadItem, CustomRequestContext customRequestContext)
     {
         _cosmosReadItem = cosmosReadItem;
+        this.customRequestContext = customRequestContext;
     }
 
     public async Task<ReadItem> GetReadItemByIdAsync(string id, Topic topic)

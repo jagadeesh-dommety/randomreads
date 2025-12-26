@@ -28,6 +28,7 @@ namespace RandomReads
                         options.JsonSerializerOptions.IncludeFields = true;
                     });
             services.AddRandomReadsServices(Configuration);
+            services.AuthServiceExtension(Configuration);
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddCors(options =>
@@ -57,6 +58,7 @@ namespace RandomReads
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseMiddleware<LoggingMiddleware>();
+            app.UseMiddleware<RequestContextMiddleware>();
             // app.UseMiddleware<RequestContextMiddleware>();
             app.UseEndpoints(endpoints =>
             {

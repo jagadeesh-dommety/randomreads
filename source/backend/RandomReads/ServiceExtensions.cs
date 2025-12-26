@@ -19,8 +19,16 @@ public static class ServiceExtensions
             var logger = sp.GetRequiredService<ILogger<CosmosReadItem>>();
             return new CosmosEmbeddingItem(cosmosembedconfig, logger);
         });
+        services.AddSingleton<CosmosUser>(sp =>
+        {
+            var logger = sp.GetRequiredService<ILogger<CosmosUser>>();
+            return new CosmosUser(configuration.GetSection("UserConfig").Get<CosmosDBConfig>(), logger);
+        });
+        services.AddScoped<CustomRequestContext>();
+        services.AddSingleton<UserSignIn>();
+        services.AddSingleton<UserService>();
         services.AddSingleton<ContentGenService>();
-        services.AddSingleton<ReadService>();
+        services.AddScoped<ReadService>();
 
         return services;
     }
