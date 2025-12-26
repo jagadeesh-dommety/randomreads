@@ -53,10 +53,12 @@ Ensure there are no repeat of the articles, vectorization - completed
 
 --------------------------------------
 
-Search for topic - 
+Search for topic - done
 
 Search for story - 
 Azure ai search - so users can search relevant stories (need more time and money)
+
+-------------------------------
 
 
 
@@ -74,3 +76,6 @@ az cosmosdb sql role assignment create --account-name randomreads --resource-gro
   --scope /subscriptions/9487cd81-9520-47e2-941d-2cfc4dda3b30/resourceGroups/randomreads/providers/Microsoft.CognitiveServices/accounts/randomreads-content-resource
 
   /subscriptions/9487cd81-9520-47e2-941d-2cfc4dda3b30/resourceGroups/randomreads/providers/Microsoft.CognitiveServices/accounts/randomreads-content-resource
+
+
+  //SHA1 - 48:89:A1:DD:A5:25:32:4D:A3:9D:1F:47:92:8C:ED:82:39:83:AC:B6
