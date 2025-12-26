@@ -61,10 +61,10 @@ public class ContentGenService
                 EmbeddingItem embeddingItem = new EmbeddingItem(read.Id, read.Topic, embedding.ToArray());
 
                 // Save embedding if not similar
-                bool foundSimilarRead = await embeddingService.CreateEmbeddingIfNotSimilarAsync(read, embedding.ToArray(), 0.80);
+                bool notFoundSimilarRead = await embeddingService.CreateEmbeddingIfNotSimilarAsync(read, embedding.ToArray(), 0.80);
 
                 // Add the generated content to Cosmos DB
-                if (foundSimilarRead)
+                if (notFoundSimilarRead)
                 await _cosmosReadItem.CreateItemAsync(read);
                 else
                 {

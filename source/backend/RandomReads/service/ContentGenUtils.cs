@@ -38,6 +38,35 @@ class ContentGenUtils
         string content = "";
 
         // Case 1: Bold title format **Title**
+        if (text.StartsWith("{"))
+        {
+            try
+            {
+                var jsonDoc = System.Text.Json.JsonDocument.Parse(text);
+                var root = jsonDoc.RootElement;
+
+                if (root.TryGetProperty("title", out var titleProp))
+                {
+                    title = titleProp.GetString() ?? "";
+                }
+
+                if (root.TryGetProperty("content", out var contentProp))
+                {
+                    content = contentProp.GetString() ?? "";
+                }
+            }
+            catch (System.Text.Json.JsonException)
+            {
+                // If JSON parsing fails, fallback to default parsing
+                throw new Exception("Error while generating content Failed to parse generated content as JSON.");
+            }
+        }
+        // -----------------------------
+    // 2️⃣ FALLBACK: MARKDOWN / TEXT
+    // -----------------------------
+    if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(content))
+    {
+        // **Bold Title**
         if (text.StartsWith("**"))
         {
             int end = text.IndexOf("**", 2);
@@ -49,17 +78,17 @@ class ContentGenUtils
         }
         else
         {
-            // Otherwise, first non-empty line is the title
             var lines = text.Split('\n')
                             .Where(l => !string.IsNullOrWhiteSpace(l))
                             .ToArray();
 
-            if (lines.Length > 0)
+            if (lines.Length > 1)
             {
                 title = lines[0].Trim();
-                content = string.Join("\n", lines.Skip(1));
+                content = string.Join("\n", lines.Skip(1)).Trim();
             }
         }
+    }
 
         // Clean content paragraphs: remove extra spaces but keep paragraphs
         content = NormalizeParagraphs(content);
