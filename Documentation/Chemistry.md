@@ -18,17 +18,17 @@
 
 "The Chemist Who Invented Color on Demand – Synthetic dyes and the death of natural pigments.",
 ------------- done
-"How Chemistry Explained Why Things Smell – The molecular lock-and-key of your nose."
+"How Chemistry Explained Why Things Smell – The molecular lock-and-key of your nose.",
 
-The Day Glass Became Transparent to Heat – Chemistry that changed architecture forever.
+"The Day Glass Became Transparent to Heat – Chemistry that changed architecture forever.",
 
-Why Mercury Was Once a Medicine – When chemistry didn’t yet know its own dangers.
+"Why Mercury Was Once a Medicine – When chemistry didn’t yet know its own dangers."
 
 The Element That Made Matches Safe – How phosphorus stopped people from burning alive.
 
 The Chemistry of Spices That Ruled the World – Molecules behind flavor, trade, and empire.
 
-The Liquid Metal That Flows Like Water – Gallium’s defiance of solid rules.
+"The Liquid Metal That Flows Like Water – Gallium’s defiance of solid rules."
 
 The Chemistry Behind Invisible Ink – Secrets written with reactions instead of words.
 

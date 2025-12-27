@@ -60,7 +60,39 @@ Azure ai search - so users can search relevant stories (need more time and money
 
 -------------------------------
 
+adding soft auth -completed
+adding google auth - pending
 
+------------------------------
+
+Add userActivity for the read
+
+  - Time spent on the read
+  - iscompleted
+  - Like
+  - Report
+  - Share
+
+
+Read stats update
+{
+  "id": "read:read_123",
+  "topic": "artificial-intelligence",
+  "readId": "read_123",
+
+  "totalTimeSpentSec": 98234,
+  "uniqueReaders": 1245,
+
+  "likesCount": 312,
+  "sharesCount": 98,
+  "reportsCount": 3,
+
+  "completedCount": 876,
+
+  "lastUpdatedAt": "2025-02-10T10:20:00Z"
+}
+
+----------------------------------------
 
 resourceGroupName='randomreads'
 accountName='<randomreads>'
