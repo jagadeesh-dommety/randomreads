@@ -94,6 +94,8 @@ Read stats update
 
 ----------------------------------------
 
+
+
 resourceGroupName='randomreads'
 accountName='<randomreads>'
 readOnlyRoleDefinitionId = '00000000-0000-0000-0000-000000000002' # This is the ID of the Cosmos DB Built-in Data contributor role definition
