@@ -36,4 +36,13 @@ public class ReadController : ControllerBase
         var readItems = await readService.GetAllReadItemsAsync(topic, count);
         return new OkObjectResult(readItems);
     }
+
+    [Authorize]
+    [HttpGet]
+    [Route("readitems/getfeed")]
+    public async Task<IActionResult> GetHomeFeed()
+    {
+        var readItems = readService.GetHomeFeed(); 
+        return new ObjectResult(readItems);
+    }
 }

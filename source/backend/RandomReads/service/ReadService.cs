@@ -1,14 +1,37 @@
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
 using RandomReads.Models;
 
 public class ReadService
 {
     private readonly CosmosReadItem _cosmosReadItem;
+    private ReadItem[] _readItems = Array.Empty<ReadItem>();
     private readonly CustomRequestContext customRequestContext;
 
     public ReadService(CosmosReadItem cosmosReadItem, CustomRequestContext customRequestContext)
     {
         _cosmosReadItem = cosmosReadItem;
         this.customRequestContext = customRequestContext;
+        InitialLoad();
+    }
+
+    public  void InitialLoad()
+    {
+        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 200 * FROM c");
+        List<ReadItem> dbreaditems =  _cosmosReadItem.Query<ReadItem>(queryDefinition, new QueryRequestOptions()
+        {
+            MaxItemCount = 200,
+        })!;
+        if (dbreaditems != null && dbreaditems.Count > 0)
+        {
+            _readItems = dbreaditems.ToArray();
+            Random.Shared.Shuffle(_readItems); 
+        }
+        else
+        {
+            throw new NullReferenceException("unable to get the reads from cosmosdb");
+        }
+
     }
 
     public async Task<ReadItem> GetReadItemByIdAsync(string id, Topic topic)
@@ -29,6 +52,26 @@ public class ReadService
         try
         {
             return await _cosmosReadItem.ReadManyByPartitionId(new Microsoft.Azure.Cosmos.PartitionKey((int)topic), count);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception occurred while retrieving items from Cosmos DB. {ex.Message}");
+            System.Diagnostics.Trace.TraceInformation($"Exception occurred while retrieving items from Cosmos DB. {ex.Message}");
+            throw new Exception($"Error retrieving items from Cosmos DB: {ex.Message}", ex);
+        }
+    }
+
+    public async Task<IEnumerable<ReadItem>> GetHomeFeed()
+    {
+        Dictionary<string, ReadItem> feeditems = new Dictionary<string, ReadItem>();
+        try
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                var rand = new Random().Next(0, _readItems.Length-1);
+                feeditems.TryAdd(_readItems[rand].Id, _readItems[rand]);
+            }
+            return feeditems.Values.ToList();
         }
         catch (Exception ex)
         {

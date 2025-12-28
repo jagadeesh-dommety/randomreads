@@ -5,6 +5,7 @@ public record ReadItem : CosmosItem
 {
     public readonly string Title;
     public readonly string Content;
+    public double rand = new Random().Next(0,1);
     public string Author { get; set; } = "";
     public string Slug => ContentUtils.GenerateSlug(Title);
     public bool IsAiGenerated { get; set; } = true;
