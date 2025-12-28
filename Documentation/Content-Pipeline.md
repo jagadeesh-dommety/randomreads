@@ -14,7 +14,7 @@ i want to generate like 100-200 posts per topic and around 50-100 topics
 for the topic - chemistry go through multiple sources - reddit quora wiki magzines and journals find the most interesting story lines - 2 to 3 sentenses that have a gripping story and hook and engaging to the user. Provide 30 best story lines  where readers find the relatability, aha factor and gripping story lines
 
 
-for the topic - EverydayTech go through multiple sources - reddit quora wiki magzines and journals find the most interesting story lines - 1 or 2 sentenses that have a gripping story and hook and engaging to the user. Provide 30 best story lines  where readers find the relatability, aha factor and gripping story lines.  one of best story lines and make it better  reading and add if any  add storylines that are fundemental and foundation to the topic which having engaging story lines
+for the topic - BrandEmpires go through multiple sources - reddit quora wiki magzines and journals find the most interesting story lines - 1 or 2 sentenses that have a gripping story and hook and engaging to the user. Provide 30 best story lines  where readers find the relatability, aha factor and gripping story lines.  one of best story lines and make it better  reading and add if any  add storylines that are fundemental and foundation to the topic which having engaging story lines
 
 -Researcher
 
