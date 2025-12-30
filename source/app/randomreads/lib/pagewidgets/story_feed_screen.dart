@@ -77,7 +77,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
         reads = await _readsService.fetchReadsByTopic(widget.topic!);
       } else {
         // Random/all fetch
-        reads = await _readsService.fetchReads();
+        reads = await _readsService.fetchHomeFeed();
       }
       if (mounted) {
         setState(() {
@@ -201,7 +201,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
       if (widget.topic != null) {
         moreReads = await _readsService.fetchReadsByTopic(widget.topic!);
       } else {
-        moreReads = await _readsService.fetchReads();
+        moreReads = await _readsService.fetchHomeFeed();
       }
       if (mounted && moreReads.isNotEmpty) {
         setState(() {
