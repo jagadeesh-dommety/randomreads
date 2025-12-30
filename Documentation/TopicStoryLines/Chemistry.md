@@ -23,6 +23,28 @@ soured the hype.",
 
 "How Lavoisier Lost His Head for Chemistry Antoine Lavoisier named oxygen and debunked phlogiston in 1770s Paris, but the Revolution guillotined him in 1794 for tax-collecting ties—his wife smuggling out notes that preserved his legacy. The father of modern chemistry fell to politics, a stark reminder that ideas outlive blades."
 
+"When You Could Smell Danger First Fritz Haber's 1915 chlorine gas release choked Ypres trenches, inventing chemical warfare that killed 90,000—his Nobel-winning ammonia now feeds billions. From lab fertilizer to lung-burning fog, one man's genius fed and felled the world",
+
+"The Element Born from Star Dust In 1868, Norman Lockyer spotted helium's yellow line in solar spectra—first discovered in the sun, not Earth, proving stars forge our air. A ghostly glow from 93 million miles away, chemistry's cosmic postcard. ",
+
+"The Dye That Colored Darwin's Beak Perkin’s 1856 mauve stained Queen Victoria's gowns, but its aniline roots traced alkaloids Darwin used to probe evolution—linking fashion's purple to finch bills. Coal tar's splash painted biology's brush. ",
+
+"The Vial That Froze Time In 1911, Heike Kamerlingh Onnes cooled mercury to -269°C, watching resistance vanish—superconductivity's birth, powering MRI machines from absolute zero chills. One lab's icebox unlocked frictionless futures. ",
+"The Molecule That Mimics Life In 1953, Miller-Urey zapped primordial soup with lightning, birthing amino acids—proving life's building blocks spark from chaos. Their flask's fizz suggested Earth cooked us from electric storms. "
+"How Dynamite been created - how dangerous initially and transformed the earth moving and larger constructions",
+
+"Basics and chemistry under the thermite reaction and its use cases in welding and high energy reactions"
+
+
+----------------------------------------
+
+
+The Crystal That Whispered Secrets
+In 1912, Max von Laue diffracted X-rays through crystals, revealing atomic lattices like invisible fingerprints—crystallography's dawn, mapping DNA's helix. Light's bounce unlocked matter's blueprint. Laue diffraction
+The Gas That Breathes Fire
+In 1772, Scheele isolated oxygen by heating nitrates, fueling brighter flames that puzzled him as "life air"—sparking Lavoisier's revolution and combustion's chain. One breath ignited chemistry's core. Scheele discovery
+
+
 "The Mauve Measles That Started the Dye Industry William Perkin ruined his quinine brew in 1856, yielding purple sludge that dyed silk like royalty—launching synthetic colors and a fortune from a teen's lab flop. Victorian fashion frenzied over mauve measles, turning coal tar trash into couture treasure. Encyclopedia Britannica"
 --------------------------------------
 Sodium Pentazolate: The Explosive Quest for All-Nitrogen Compounds
