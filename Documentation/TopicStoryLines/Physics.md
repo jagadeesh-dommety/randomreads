@@ -15,7 +15,7 @@ The Cat That Was Alive and Dead Schrödinger's 1935 paradox trapped a cat in qua
 The Accident That Discovered the Microwave Percy Spencer felt a chocolate bar melt in his radar pocket in 1945, birthing the oven that reheats leftovers in seconds— from wartime waves to kitchen staple. Serendipity cooked up convenience. IEEE Spectrum
 
 The Man Who Heard the Universe Expand Edwin Hubble spotted galaxies redshifting in 1929, proving the cosmos stretches like rising dough—Big Bang's echo in every star. His backyard telescope redrew creation from static to surging. Scientific American
--------------------------------------
+
 The Constant That Almost Wasn’t
 Einstein fudged a "cosmological constant" in 1917 to steady his static universe, later calling it his "blunder"—until 1998's accelerating expansion revived it as dark energy's key. One tweak fixed, then flipped, the stars. Nature
 The Equation That Predicted Antimatter
@@ -30,6 +30,10 @@ The Particle That Shouldn’t Exist
 The Higgs boson, hunted for 50 years, popped in CERN's 2012 smash—giving mass to everything, from protons to you. This "god particle" hid in plain equations, waiting for a $10B nudge. CERN Journal
 Why the Sky Is Blue but Sunsets Are Red
 Rayleigh scattering bounces blue light off air molecules all day, but longer reds pierce sunsets—Tyndall's 1871 demo showed pollution amps the drama. Everyday physics paints your daily show. American Journal of Physics
+
+"The transistion of clocks from initial sun dails to the galeleo pendulum sailor problems and the atomic clocks - an interesting story where human relay" 
+-----------------------------------------------------------------------------------
+
 The Discovery That Almost Ended Free Will
 Laplace's 1814 demon imagined a mind knowing every atom's path, making choice illusion—until quantum dice in 1927 rolled unpredictability back in. Determinism cracked, giving chaos its say. Philosophy Now
 The Experiment That Measured Nothingness
