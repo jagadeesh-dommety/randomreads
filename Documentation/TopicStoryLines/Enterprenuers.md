@@ -23,15 +23,19 @@
 
 "Henry Ford's First Two Car Companies Failed—The Third Changed the World Detroit Automobile Company (1899): failed after 20 cars; Henry Ford Company (1901): investors ousted him; Ford Motor Company (1903): assembly line dropped Model T price from $850 to $260; paid workers $5/day (double industry rate); revolutionized manufacturing and wages; failure taught him workers = customers.",
 
+"Travis Kalanick Coded Uber on a Paris Couch—After His Previous Startup Died Red Swoosh (file-sharing) sued into oblivion (2007); broke, moved to Paris; couldn't get cab in snow (2008); texted Garrett Camp: What if you could request a ride from your phone?; UberCab born from frustration; dodged taxi regulations globally; built $90B company, forced out by board (2017); comeback now with CloudKitchens.",
 
 "Elon Musk Slept on Tesla's Factory Floor During 2008 Crisis—Invested His Last $40 Million Divorced, companies bleeding cash; SpaceX had 3 failed launches, Tesla $40M short of bankruptcy; Christmas 2008: invested last personal dollar into Tesla; slept in factory, showered at YMCA; NASA contract and Daimler investment arrived days before collapse; "all-in" gamble saved both companies.",
 
 "Reed Hastings Started Netflix Because of a $40 Late Fee—Blockbuster Laughed Owed $40 for Apollo 13 VHS (1997); embarrassed, conceived subscription model; Blockbuster CEO passed on buying Netflix for $50M (2000): "dot-com nonsense"; Netflix pivoted to streaming (2007); Blockbuster bankrupt (2010); Netflix worth $250B+; $40 late fee killed an empire.",
 
+"Jan Koum Was on Food Stamps When He Started WhatsApp—Sold It for $19 Billion Ukrainian immigrant, mother died from cancer (2000), living in one-bedroom; rejected by Facebook (2009), started WhatsApp; "no ads, no games, no gimmicks"; Facebook bought it for $19B (2014); signed papers on doorstep of welfare office where he once collected food stamps",
 
 "Walt Disney Was Fired From a Newspaper for Lack of Imagination Kansas City Star (1919) let him go; started animation studio, went bankrupt; moved to Hollywood, lost Oswald the Rabbit to Universal (1928); created Mickey Mouse out of spite; Snow White (1937) called "Disney's Folly"—critics predicted failure; $200B empire built on rejected imagination.",
 
 "Mark Zuckerberg Turned Down $1 Billion at Age 22—Investors Called Him Insane Yahoo offered $1B for Facebook (2006); Zuckerberg refused; investors revolted, tried ousting him; Accel Partners' Jim Breyer supported him; Facebook now worth $1T+; Yahoo sold for $4.5B (2017); turning down billions at 22 proved gut over greed wins."
+
+"Karl benz - first car where he had speculations and where as his wife bertha drove and made history - first car driver is women"
 
 ------------------------------
 
@@ -95,8 +99,7 @@ Yahoo offered $1B for Facebook (2006); Zuckerberg refused; investors revolted, t
 
 
 
-Jan Koum Was on Food Stamps When He Started WhatsApp—Sold It for $19 Billion
-Ukrainian immigrant, mother died from cancer (2000), living in one-bedroom; rejected by Facebook (2009), started WhatsApp; "no ads, no games, no gimmicks"; Facebook bought it for $19B (2014); signed papers on doorstep of welfare office where he once collected food stamps.
+
 
 Oprah Was Fired From Her First TV Job—For Being "Unfit for Television"
 Baltimore WJZ-TV (1977): removed as anchor for "getting too emotionally invested in stories"; demoted to morning cut-ins; humiliated, moved to Chicago talk show; emotional authenticity critics hated became her $2.5B brand; "unfitness" was her superpower.
@@ -109,8 +112,7 @@ Tier 6: Modern Era (2005-Present)
 Brian Chesky Sold Obama O's Cereal to Keep Airbnb Alive—Made $30,000
 2008: Airbnb failing, founders couldn't pay rent; Democratic National Convention in Denver; printed 1,000 Obama O's and Cap'n McCain's cereal boxes; sold for $40 each; $30K kept servers running; Y Combinator accepted them partly because "if you can convince people to buy $40 cereal, you can sell anything."
 
-Travis Kalanick Coded Uber on a Paris Couch—After His Previous Startup Died
-Red Swoosh (file-sharing) sued into oblivion (2007); broke, moved to Paris; couldn't get cab in snow (2008); texted Garrett Camp: "What if you could request a ride from your phone?"; UberCab born from frustration; dodged taxi regulations globally; built $90B company, forced out by board (2017); comeback now with CloudKitchens.
+
 
 Whitney Wolfe Herd Left Tinder After Sexual Harassment—Built Bumble as Revenge
 Cofounded Tinder (2012), started dating CEO; relationship ended, she alleged harassment, sued (2014), settled; launched Bumble (2014) where women message first; went public at $13B (2021), she was 31; trauma became thesis: "rebuild dating power dynamics."
