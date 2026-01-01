@@ -1,38 +1,34 @@
-"The Moldy Petri Dish Left on a Windowsill—That Became Penicillin and Saved 200 Million Lives
-Alexander Fleming went on vacation in 1928, returned to contaminated bacterial cultures; almost threw them away; noticed a clear ring where mold killed bacteria; took 12 years to convince anyone it mattered.",
+"The Moldy Petri Dish Left on a Windowsill—That Became Penicillin and Saved 200 Million Lives Alexander Fleming went on vacation in 1928, returned to contaminated bacterial cultures; almost threw them away; noticed a clear ring where mold killed bacteria; took 12 years to convince anyone it mattered.",
 
-"The Doctor Who Drank Bacteria-Infused Broth to Prove Ulcers Weren't From Stress
-Barry Marshall couldn't get funding to test his theory; swallowed H. pylori in 1984; developed ulcers in days; cured himself with antibiotics; won Nobel Prize 21 years later; overturned 100 years of it's all in your head.",
+"The Doctor Who Drank Bacteria-Infused Broth to Prove Ulcers Weren't From Stress Barry Marshall couldn't get funding to test his theory; swallowed H. pylori in 1984; developed ulcers in days; cured himself with antibiotics; won Nobel Prize 21 years later; overturned 100 years of it's all in your head.",
 
-"The Nurse Who Noticed Surgeons With Cracked Hands Had Fewer Patient Deaths
-Ignaz Semmelweis in 1847 saw that doctors who did autopsies then delivered babies caused death rates of 18%; forced hand-washing with chlorine; deaths dropped to 1%; colleagues mocked him; he died in an asylum; germ theory proved him right 20 years posthumously.",
+"The Nurse Who Noticed Surgeons With Cracked Hands Had Fewer Patient Deaths Ignaz Semmelweis in 1847 saw that doctors who did autopsies then delivered babies caused death rates of 18%; forced hand-washing with chlorine; deaths dropped to 1%; colleagues mocked him; he died in an asylum; germ theory proved him right 20 years posthumously.",
 
-"The X-Ray Discovered Because a Scientist Forgot to Turn Off His Equipment
-Wilhelm Röntgen left a cathode ray tube running in 1895; barium-coated screen across the room glowed; spent 7 weeks experimenting in secret; first X-ray was his wife's hand; she screamed "I have seen my death"; he won the first Nobel Prize.",
+"The X-Ray Discovered Because a Scientist Forgot to Turn Off His Equipment Wilhelm Röntgen left a cathode ray tube running in 1895; barium-coated screen across the room glowed; spent 7 weeks experimenting in secret; first X-ray was his wife's hand; she screamed "I have seen my death"; he won the first Nobel Prize.",
 
-"The Diabetic Dogs That Wouldn't Die—Leading to Insulin
-Banting and Best removed dogs' pancreases in 1921 expecting death; injected pancreatic extract as desperation; dogs lived; first human patient (14-year-old Leonard Thompson) was dying, weighed 65 lbs; woke up asking for food; died at 27 from complications but lived 13 impossible years.",
+"The Diabetic Dogs That Wouldn't Die—Leading to Insulin Banting and Best removed dogs' pancreases in 1921 expecting death; injected pancreatic extract as desperation; dogs lived; first human patient (14-year-old Leonard Thompson) was dying, weighed 65 lbs; woke up asking for food; died at 27 from complications but lived 13 impossible years.",
 
-"The Heart Surgery Performed on a Kitchen Table—By a Doctor Operating on Himself
-Leonid Rogozov, Soviet Antarctic base 1961: appendicitis with no help coming; set up mirrors; injected local anesthetic; removed his own appendix in 2 hours; passed out twice; survived; continued as base doctor for a year.",
+"The Heart Surgery Performed on a Kitchen Table—By a Doctor Operating on Himself Leonid Rogozov, Soviet Antarctic base 1961: appendicitis with no help coming; set up mirrors; injected local anesthetic; removed his own appendix in 2 hours; passed out twice; survived; continued as base doctor for a year.",
 
+"Bloodletting: The Medical Treatment That Killed George Washington 1799: Washington had a throat infection; doctors drained 40% of his blood in 12 hours; he begged them to stop; they drained more; died of shock and blood loss; treatment used for 2,000 years; finally abandoned after killing countless patients including Byron, Mozart, possibly Beethoven.",
 
-"The Syphilis Experiment Where Doctors Infected Men Without Telling Them—For 40 Years
-Tuskegee Study 1932-1972: 400 Black men told they were getting free healthcare; actually observed untreated syphilis; penicillin cure existed after 1947; doctors withheld it to watch them die; exposed by whistleblower; led to modern ethics laws.",
+"The Urine Taste Test—How Doctors Diagnosed Diabetes for 1,000 Years Ancient to 1800s: physicians tasted patient urine for sweetness; honey urine disease in Sanskrit texts; Thomas Willis in 1674 noted it was wonderfully sweet as if imbued with honey; this method worked but was disgusting; chemical tests invented 1850s."
 
-"The Lobotomy Invented by a Doctor Who Drilled Holes in Patients' Skulls in His Office
-Walter Freeman performed 3,500 ice-pick lobotomies through eye sockets; took 10 minutes; no surgical training; killed his own secretary during demonstration; won Nobel Prize; procedure banned after Kennedy sister Rosemary was left incapacitated.",
+"The Syphilis Experiment Where Doctors Infected Men Without Telling Them—For 40 Years Tuskegee Study 1932-1972: 400 Black men told they were getting free healthcare; actually observed untreated syphilis; penicillin cure existed after 1947; doctors withheld it to watch them die; exposed by whistleblower; led to modern ethics laws.",
 
-"The Plague Doctor Masks With Bird Beaks—That Actually Made the Black Death Worse
-1656: doctors filled beaks with herbs/flowers thinking smell caused disease; wrong theory but iconic image; beak trapped infected breath near their faces; higher death rate among plague doctors; miasma theory killed them.",
+"The Hospital Design That Saved More Lives Than Drugs Light, airflow, and layout reducing infection before antibiotics—architecture as medicine.",
 
-"The Doctor Who Proved Smoking Caused Cancer—By Painting Tar on Rabbits for Three Years
-Ernst Wynder, 1950: painted cigarette tar on rabbits' backs daily; 44% developed tumors; tobacco industry called him a liar; took 14 more years and 500,000 deaths before Surgeon General's warning appeared."
+"Ancient indian surgery shrushta - father of surgery",
 
-"The Radium Girls Whose Bones Glowed in the Dark—And Whose Lawsuit Changed Labor Law
-1920s: women painted watch dials with radium paint; told to lick brushes for fine points; jaws fell off; bones crumbled; companies denied responsibility; five sued in 1928; won but died during trial; OSHA created partly because of them."
+"The Lobotomy Invented by a Doctor Who Drilled Holes in Patients' Skulls in His Office Walter Freeman performed 3,500 ice-pick lobotomies through eye sockets; took 10 minutes; no surgical training; killed his own secretary during demonstration; won Nobel Prize; procedure banned after Kennedy sister Rosemary was left incapacitated.",
 
-The Surgeon Who Operated Drunk and Killed Three People in One Surgery Robert Liston, 1847: amputated leg in 2.5 minutes (world record); cut off patient's testicles by accident; slashed assistant's fingers (both died of gangrene); sliced spectator's coat (died of shock); only surgeon with 300% mortality rate.
+"The Plague Doctor Masks With Bird Beaks—That Actually Made the Black Death Worse 1656: doctors filled beaks with herbs/flowers thinking smell caused disease; wrong theory but iconic image; beak trapped infected breath near their faces; higher death rate among plague doctors; miasma theory killed them.",
+
+"The Doctor Who Proved Smoking Caused Cancer—By Painting Tar on Rabbits for Three Years Ernst Wynder, 1950: painted cigarette tar on rabbits' backs daily; 44% developed tumors; tobacco industry called him a liar; took 14 more years and 500,000 deaths before Surgeon General's warning appeared."
+
+"The Radium Girls Whose Bones Glowed in the Dark—And Whose Lawsuit Changed Labor Law 1920s: women painted watch dials with radium paint; told to lick brushes for fine points; jaws fell off; bones crumbled; companies denied responsibility; five sued in 1928; won but died during trial; OSHA created partly because of them."
+
+"The Surgeon Who Operated Drunk and Killed Three People in One Surgery Robert Liston, 1847: amputated leg in 2.5 minutes (world record); cut off patient's testicles by accident; slashed assistant's fingers (both died of gangrene); sliced spectator's coat (died of shock); only surgeon with 300% mortality rate."
 ------------------------------------------------
 The Children Fed Radioactive Oatmeal—In the Name of Science
 1946-1953: MIT and Quaker Oats gave developmentally disabled boys at Fernald School oatmeal laced with radioactive tracers; consent forms called it "science club"; parents never told about radiation; lawsuit settled in 1998.
@@ -67,11 +63,7 @@ Stone Age surgery from 10,000 years ago; skulls show bone regrowth meaning patie
 The Mercury Treatment for Syphilis—That Was Worse Than the Disease
 16th-19th century: "A night with Venus, a lifetime with Mercury"; rubbed mercury into open sores; caused kidney failure, tooth loss, madness; saying was "he who uses mercury treats his patients cruelly"; killed more than it cured; Abraham Lincoln likely took it.
 
-Bloodletting: The Medical Treatment That Killed George Washington
-1799: Washington had a throat infection; doctors drained 40% of his blood in 12 hours; he begged them to stop; they drained more; died of shock and blood loss; treatment used for 2,000 years; finally abandoned after killing countless patients including Byron, Mozart, possibly Beethoven.
 
-The Urine Taste Test—How Doctors Diagnosed Diabetes for 1,000 Years
-Ancient to 1800s: physicians tasted patient urine for sweetness; "honey urine disease" in Sanskrit texts; Thomas Willis in 1674 noted it was "wonderfully sweet as if imbued with honey"; this method worked but was disgusting; chemical tests invented 1850s.
 Tier 5: Modern Miracles & Ongoing Mysteries
 The Surgery Performed While the Patient Played Violin—To Map Her Brain in Real-Time
 Dagmar Turner, 2020: brain tumor near motor cortex controlling her left hand; surgeons woke her mid-operation; she played violin to ensure they didn't damage musical ability; tumor removed, she kept playing; awake brain surgery now routine.
@@ -88,7 +80,3 @@ Bernard Devauchelle, 2005 France: woman's face destroyed by dog; 15-hour surgery
 CRISPR: The Gene-Editing Tool Found in Yogurt Bacteria—That Could Cure Everything or Destroy Humanity
 Jennifer Doudna, 2012: discovered bacterial immune system could cut DNA precisely; sickle cell cured, cancers treated; Chinese scientist edited human embryos in 2018, imprisoned; cure or dystopia?; Doudna has nightmares about Hitler asking her for help.
 
-The Hospital Design That Saved More Lives Than Drugs
-Light, airflow, and layout reducing infection before antibiotics—architecture as medicine.
-
-Ancient indian surgery shrushta - father of surgery 

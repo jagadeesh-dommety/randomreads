@@ -31,7 +31,20 @@ A 75-Year-Old Woman Accidentally Shut Down an Entire Country's Internet 2011 Geo
 
 "Your Phone Screen is Made of Melted Sand, Scratched by Nothing But Diamonds
 Gorilla Glass is aluminosilicate heated to 400°C then ion-exchanged; ranks 6.5 on Mohs hardness scale; only corundum (sapphire) and diamond can scratch it; you're carrying refined beach in your pocket."
+
+Your Monitor's "60Hz" is a Legacy of 1940s Electrical Grids
+TV refresh rates matched AC power frequency (60Hz US, 50Hz Europe) to prevent flicker from power fluctuations; modern screens don't need this but we kept it; arbitrary 80-year-old standard governs gaming frame rates.
+
+Your Phone Knows Where You Are by Talking to 4 Satellites 12,000 Miles Away
+GPS triangulates position by measuring how long radio signals take from satellites; needs 4 satellites for 3D location; works because light travels at exactly 299,792,458 m/s; speed of light makes maps possible.
+
+
+Google Maps Was Built Because Someone Was Late to a Party
+2004: Lars Rasmussen kept getting lost in Sydney; frustrated, built "Where 2 Technologies"; Google bought it for maps; now 1 billion people use it daily; being directionally challenged created navigation for humanity.
+
 ---------------------------------------------------------
+
+
 Moore's Law: Computing Power Doubles Every 2 Years—And It's Finally Dying
 
 
@@ -41,10 +54,7 @@ GPS Was Kept Deliberately Inaccurate Until 2000—To Protect Military Secrets
 
 A Plane Shot Down Because GPS Was Secret Led to GPS Going Public
 1983: Korean Air 007 drifted into Soviet airspace, shot down, 269 dead; Reagan declassified GPS for civilian aviation; one tragedy created the navigation system in your pocket.
-Your Phone Knows Where You Are by Talking to 4 Satellites 12,000 Miles Away
-GPS triangulates position by measuring how long radio signals take from satellites; needs 4 satellites for 3D location; works because light travels at exactly 299,792,458 m/s; speed of light makes maps possible.
-Google Maps Was Built Because Someone Was Late to a Party
-2004: Lars Rasmussen kept getting lost in Sydney; frustrated, built "Where 2 Technologies"; Google bought it for maps; now 1 billion people use it daily; being directionally challenged created navigation for humanity.
+
 
 The Spam Email Named After a Monty Python Sketch About Canned Meat
 1970 skit had Vikings drowning out conversation singing "SPAM SPAM SPAM"; early internet users adopted it for messages that drown out real content; now 85% of all email is spam.
@@ -52,15 +62,21 @@ The Spam Email Named After a Monty Python Sketch About Canned Meat
 
 The First Touchscreen Was Invented Because a Scientist Hated Data Entry
 1965: E.A. Johnson at UK Royal Radar built touch interface because typing radar data was tedious; invention ignored for decades; now you touch screens 2,617 times per day on average.
+
 Your Phone Screen is Made of Melted Sand, Scratched by Nothing But Diamonds
 Gorilla Glass is aluminosilicate heated to 400°C then ion-exchanged; ranks 6.5 on Mohs hardness scale; only corundum (sapphire) and diamond can scratch it; you're carrying refined beach in your pocket.
+
 GPS Satellites Would Fail in Days Without Einstein's Relativity
 Satellites move at 8,700 mph and orbit 12,500 miles up; time moves 38 microseconds faster per day than on Earth; without relativity corrections, GPS would drift 6 miles per day; your maps need Einstein to work.
+
 Gordon Moore predicted transistor density doubling in 1965; held true for 50+ years; physics hitting limits (transistors now 5nm—20 atoms wide); quantum tunneling breaks chips; we're approaching the end of exponential growth.
 OLED Screens Burn Out Pixel by Pixel—Your Phone is Slowly Dying
+
 Organic LEDs degrade with use; blue pixels die fastest (10,000 hours); why phone brightness decreases over years; static images cause "burn-in"; every OLED screen has a ticking clock.
 The Blue Light Keeping You Awake Was Invented to Wake Chickens
+
 Blue LEDs (440-480nm wavelength) suppress melatonin production; discovered studying circadian rhythms in poultry farms; now phones emit the same frequency; your screen thinks it's an eternal sunrise.
+
 Your Monitor's "60Hz" is a Legacy of 1940s Electrical Grids
 TV refresh rates matched AC power frequency (60Hz US, 50Hz Europe) to prevent flicker from power fluctuations; modern screens don't need this but we kept it; arbitrary 80-year-old standard governs gaming frame rates.
 
@@ -68,16 +84,24 @@ Tier 4: Smartphones & Mobile Tech
 
 The First Mobile Phone Weighed 2.5 Pounds and Cost $4,000 for 30 Minutes of Talk
 1973: Motorola DynaTAC took 10 hours to charge, 30 minutes of battery; Martin Cooper called his rival at Bell Labs just to brag; modern phones are 60,000x more powerful than Apollo 11 guidance computer.
+
+
 Your Phone Has More Sensors Than a 1990s Fighter Jet
 Average smartphone: accelerometer, gyroscope, magnetometer, GPS, proximity sensor, ambient light sensor, barometer, fingerprint scanner, multiple cameras; F-16 had 12 sensors; iPhone has 15+; you're carrying a pocket jet.
+
 The QWERTY Keyboard Was Designed to Slow You Down—And We're Still Using It
 1870s: Christopher Sholes spread common letter pairs apart to prevent typewriter jams; deliberately inefficient layout; Dvorak keyboard is 40% faster but we're too invested in QWERTY to change; muscle memory locked us into a 150-year-old hack.
+
 Mark Zuckerberg Made Facebook Blue Because He's Colorblind
 Red-green colorblindness means blue is the richest color for him; Facebook, Instagram, and early Oculus all blue-dominant; 2.9 billion users see the world through his color vision deficiency.
+
 Smartphone Addiction is Engineered—The Slot Machine in Your Pocket
 Variable reward schedules (pull-to-refresh, random notifications) use same psychology as gambling; slot machines were studied to optimize smartphone apps; average user touches phone 2,617 times/day; tech designed to be irresistible.
+
 Your Phone's Vibration Motor is a Tiny Off-Balance Weight Spinning 200 Times Per Second
 Linear resonant actuators (LRAs) or eccentric rotating mass (ERM); spinning lopsided weight creates vibration; iPhone's Taptic Engine can simulate button clicks that don't exist; haptic feedback is controlled off-balance physics.
+
+
 Airplane Mode Exists Because of a 1960s Conspiracy Theory—Not Real Danger
 Original concern: phones might interfere with navigation (never proven); maintained because airlines wanted to sell onboard calls; modern planes immune to interference but we kept the rule; based on theoretical risk that never materialized.
 
@@ -85,8 +109,12 @@ Tier 5: Wi-Fi & Wireless Tech
 
 Wi-Fi Was Invented by a Hollywood Actress Trying to Stop Nazi Torpedoes
 1942: Hedy Lamarr and composer George Antheil patented "frequency hopping" to prevent radio jamming of Allied torpedoes; Navy ignored it; 1960s military rediscovered it; Wi-Fi, Bluetooth, GPS all use her invention; beauty and brains stereotype destroyed.
+
+
 Bluetooth is Named After a Viking King Who United Scandinavia With His Dead Tooth
 King Harald "Bluetooth" Gormsson (958-986 AD) united Danish tribes; had a conspicuously dead/dark tooth; Bluetooth tech unites devices; logo is his initials in Nordic runes (ᚼ+ᛒ); 10th-century dentistry powers modern wireless.
+
+
 Your Wi-Fi Router Broadcasts on the Same Frequency as Your Microwave
 Both use 2.4 GHz; microwave ovens leak radiation; can interfere with Wi-Fi; why your internet slows when reheating leftovers; FCC allows 2.4 GHz for unlicensed use because it's the frequency water molecules vibrate at.
 Wi-Fi Doesn't Stand for "Wireless Fidelity"—It Doesn't Stand for Anything
