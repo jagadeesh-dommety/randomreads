@@ -6,21 +6,19 @@ public class ReadService
 {
     private readonly CosmosReadItem _cosmosReadItem;
     private ReadItem[] _readItems = Array.Empty<ReadItem>();
-    private readonly CustomRequestContext customRequestContext;
 
-    public ReadService(CosmosReadItem cosmosReadItem, CustomRequestContext customRequestContext)
+    public ReadService(CosmosReadItem cosmosReadItem)
     {
         _cosmosReadItem = cosmosReadItem;
-        this.customRequestContext = customRequestContext;
         InitialLoad();
     }
 
     public  void InitialLoad()
     {
-        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 200 * FROM c");
+        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 500 * FROM c");
         List<ReadItem> dbreaditems =  _cosmosReadItem.Query<ReadItem>(queryDefinition, new QueryRequestOptions()
         {
-            MaxItemCount = 200,
+            MaxItemCount = 500,
         })!;
         if (dbreaditems != null && dbreaditems.Count > 0)
         {

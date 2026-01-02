@@ -28,7 +28,7 @@ public static class ServiceExtensions
         services.AddSingleton<UserSignIn>();
         services.AddSingleton<UserService>();
         services.AddSingleton<ContentGenService>();
-        services.AddScoped<ReadService>();
+        services.AddSingleton<ReadService>();
 
         return services;
     }
