@@ -1,5 +1,52 @@
 # Topics
 
+
+0. Mathematics, 
+1. Physics, 
+2. SpaceExploration, 
+3. Chemistry,
+4. ArtificialIntelligence, 
+5. SoftwareEngineering, 
+6. Medicine, 
+7. Engineering, 
+8. EverydayTech,
+9. QuantumAndFutureTech, 
+10. MarvelUniverse,
+11. DCUniverse, 
+12. StarWars, 
+13. HarryPotter,
+14. LordOfTheRings,
+15. Friends, 
+16. BreakingBad, 
+17. Anime, 
+18. MusicLegends, 
+19. KpopCulture, 
+20. GamingHistory,
+21. Hollywood,
+22. StockMarket,
+23. PersonalFinance,
+24. CryptoAndBlockchain,
+25. FootballSoccer,
+26. NBABasketball,
+27. F1Racing,
+28. OlympicLegends,
+29. AmericanHistory,
+30. IndianHistory,
+31. EuropeanHistory,
+32. WorldWarsConflicts,
+33. AncientCivilizations,
+34. BrandEmpires,
+35. Entrepreneurs,
+36. Psychology, 
+37. Humanities, 
+38. BrainAndNeuroscience,
+39. Evolution,
+40. Environment, - Earth & Environmemt
+41. Wildlife,
+42. TrueCrime,
+43. BooksAndLiterature
+
+
 This page contains all the topics and sub-topics
 
 ## Mathematics
@@ -550,47 +597,6 @@ Millau Viaduct's Impossible Build - The tallest bridge pier in the world
      10.1. True Crime  
      10.2. Books & Literature  
 
-0. Mathematics, 
-1. Physics, 
-2. SpaceExploration, 
-3. Chemistry,
-4. ArtificialIntelligence, 
-5. SoftwareEngineering, 
-6. Medicine, 
-7. Engineering, 
-8. EverydayTech,
-9. QuantumAndFutureTech, 
-10. MarvelUniverse,
-11. DCUniverse, 
-12. StarWars, 
-13. HarryPotter,
-14. LordOfTheRings,
-15. Friends, 
-16. BreakingBad, 
-17. Anime, 
-18. MusicLegends, 
-19. KpopCulture, 
-20. GamingHistory,
-21. Hollywood,
-22. StockMarket,
-23. PersonalFinance,
-24. CryptoAndBlockchain,
-25. FootballSoccer,
-26. NBABasketball,
-27. F1Racing,
-28. OlympicLegends,
-29. AmericanHistory,
-30. IndianHistory,
-31. EuropeanHistory,
-32. WorldWarsConflicts,
-33. AncientCivilizations,
-34. BrandEmpires,
-35. Entrepreneurs,
-36. Psychology, 
-37. Humanities, 
-38. BrainAndNeuroscience,
-39. Evolution,
-40. Environment, - Earth & Environmemt
-41. Wildlife,
-42. TrueCrime,
-43. BooksAndLiterature
+
+
+
