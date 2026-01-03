@@ -10,7 +10,6 @@ class UserActivityService {
 
     final response = await HttpService.post(url, body: jsonEncode(userActivity.map((x) => x.toJson()).toList()));
     if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
       return true;
     } else {
       return false;

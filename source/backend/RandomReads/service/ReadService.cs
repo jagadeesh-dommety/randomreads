@@ -15,10 +15,10 @@ public class ReadService
 
     public  void InitialLoad()
     {
-        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 500 * FROM c");
+        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 30 * FROM c");
         List<ReadItem> dbreaditems =  _cosmosReadItem.Query<ReadItem>(queryDefinition, new QueryRequestOptions()
         {
-            MaxItemCount = 500,
+            MaxItemCount = 30,
         })!;
         if (dbreaditems != null && dbreaditems.Count > 0)
         {
@@ -64,7 +64,7 @@ public class ReadService
         Dictionary<string, ReadItem> feeditems = new Dictionary<string, ReadItem>();
         try
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var rand = new Random().Next(0, _readItems.Length-1);
                 feeditems.TryAdd(_readItems[rand].Id, _readItems[rand]);

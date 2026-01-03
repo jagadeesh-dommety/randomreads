@@ -29,6 +29,8 @@ namespace RandomReads
                     });
             services.AddRandomReadsServices(Configuration);
             services.AuthServiceExtension(Configuration);
+            services.AddSingleton<IReadActivityAggregator, ReadActivityAggregator>();
+            services.AddHostedService<ReadActivityBackground>();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddCors(options =>

@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:randomreads/services/auth_storage_service.dart';
 
 class HttpService {
-  static const int defaultMaxRetries = 2;
+  static const int defaultMaxRetries = 1;
   static const Duration baseDelay = Duration(milliseconds: 1000);
 
   static const Map<String, String> _defaultHeaders = {
@@ -60,7 +60,7 @@ class HttpService {
     final requestHeaders =
         await _buildHeaders(headers, authRequired: authRequired);
 
-    for (int attempt = 1; attempt <= maxRetries + 1; attempt++) {
+    for (int attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         final response = await _execute(
           method: method,

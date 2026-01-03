@@ -33,12 +33,11 @@ class ActivityManager {
       isShared: false,
       isReported: false,
     );
-    _pendingActivities.add(_currentActivity!);
     _stopwatch = Stopwatch()..start();
   }
 
   void updateCompletion(bool completed) {
-    if (_currentActivity != null) {
+    if (_currentActivity != null && completed) {
       _currentActivity!.isCompleted = completed;
     }
   }
@@ -66,7 +65,11 @@ class ActivityManager {
 
     _stopwatch!.stop();
     _currentActivity!.timeSpent = _stopwatch!.elapsedMilliseconds ~/ 1000; // Seconds
-    _saveIfBatchFull(); // Check batch
+    if (_currentActivity!.timeSpent > 5){
+          _pendingActivities.add(_currentActivity!);
+              _saveIfBatchFull(); // Check batch
+
+    }
   }
 
   Future<void> _saveIfBatchFull() async {

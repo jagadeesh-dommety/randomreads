@@ -83,6 +83,58 @@ namespace RandomReads.CosmosDB
         }
 
         /// <summary>
+        /// Create an item in CosmosDB.
+        /// </summary>
+        /// <param name="document">The item to create.</param>
+        /// <param name="cancelToken">Cancellation token</param>
+        /// <returns>Create operation status</returns>
+        internal async Task<bool> PatchItemAsync(
+            string id,
+            PartitionKey partitionKey,
+            List<PatchOperation> operations,
+            CancellationToken cancelToken = default)
+        {
+            try
+            {
+                var options = new PatchItemRequestOptions
+                {
+                    EnableContentResponseOnWrite = false
+                };
+
+                ItemResponse<object> response =
+                    await container.PatchItemAsync<object>(
+                        id,
+                        partitionKey,
+                        operations,
+                        options,
+                        cancelToken);
+
+                logger.LogDebug(
+                    "PatchItemAsync succeeded for {Id}. RU: {RU}",
+                    id,
+                    response.RequestCharge);
+
+                return true;
+            }
+            catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+            {
+                logger.LogWarning(
+                    "Patch failed – document not found: {Id}",
+                    id);
+
+                return false; // Caller should CREATE
+            }
+            catch (CosmosException ex)
+            {
+                logger.LogError(
+                    ex,
+                    "PatchItemAsync failed for {Id}",
+                    id);
+                throw;
+            }
+        }
+
+        /// <summary>
         /// Upsert an item into CosmosDB.
         /// </summary>
         /// <param name="document">The item to upsert.</param>
