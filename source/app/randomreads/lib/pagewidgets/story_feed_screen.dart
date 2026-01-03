@@ -3,12 +3,14 @@
 // ============================================
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:randomreads/common/activity_manager.dart';
 import 'package:randomreads/models/readitem.dart';
 import 'package:randomreads/appbars/randomreads_app_bar.dart';
 import 'package:randomreads/pagewidgets/reading_content.dart';
 import 'package:randomreads/pagewidgets/reading_progress_indicator.dart';
 import 'package:randomreads/pagewidgets/snackbar_helper.dart';
 import 'package:randomreads/appbars/topic_app_bar.dart';
+import 'package:randomreads/services/auth_storage_service.dart';
 import 'package:randomreads/services/getreadsservice.dart';
 
 class StoryFeedScreen extends StatefulWidget {
@@ -30,21 +32,22 @@ class StoryFeedScreen extends StatefulWidget {
 class _StoryFeedScreenState extends State<StoryFeedScreen> {
   final ScrollController _scrollController = ScrollController();
   final Getreadsservice _readsService = Getreadsservice();
+  final ActivityManager _activityManager = ActivityManager(); // New modular class for activity
   
   // State variables
   List<ReadItem> _readsList = [];
   int _currentReadIndex = 0;
   double _scrollProgress = 0.0;
-  bool _isSaved = false;
   bool _isLoading = true;
   int _fontSizeIndex = 1; // 0: Small, 1: Medium, 2: Large
   String _currentSort = 'newest';  // Default sort for topics (or 'relevance' if preferred)
 
   // Constants
-  static const List<double> _fontSizes = [12.0, 14.0, 16.0];
-  static const List<double> _lineHeights = [1.7, 1.8, 1.9];
+  static const List<double> _fontSizes = [14.0, 16.0, 18.0];
+  static const List<double> _lineHeights = [1.8, 1.9,2.0];
   static const List<String> _fontSizeLabels = ['Small', 'Medium', 'Large'];
   static const double _swipeThreshold = 100.0;
+  static const double _completionThreshold = 0.6; // 60% scroll for completion
   SwipeDirection _swipeDirection = SwipeDirection.left;
 
   ReadItem? get _currentReadItem =>
@@ -60,6 +63,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
 
   @override
   void dispose() {
+    _activityManager.dispose(); // Clean up manager
     _scrollController.removeListener(_updateScrollProgress);
     _scrollController.dispose();
     super.dispose();
@@ -80,10 +84,13 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
         reads = await _readsService.fetchHomeFeed();
       }
       if (mounted) {
+        
+        
         setState(() {
           _readsList = reads;
           _isLoading = false;
         });
+       _startNewActivity(reads[_currentReadIndex]);
       }
     } catch (e) {
       if (mounted) {
@@ -99,8 +106,19 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     if (mounted) {
       setState(() {
         _currentReadIndex = 0;
-        _isSaved = false;
       });
+    }
+  }
+
+  Future<void> _startNewActivity(ReadItem item) async {
+    String? userid = await AuthStorageService.getUserId();
+    if (userid != null) {
+      _activityManager.startNewActivity(
+        userid: userid,
+        topic: item.topic,
+        readId: item.id,
+        isLiked: _activityManager.isLiked, // Carry over if needed
+      );
     }
   }
 
@@ -111,10 +129,11 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
   void _updateScrollProgress() {
     final maxScroll = _scrollController.position.maxScrollExtent;
     final currentScroll = _scrollController.position.pixels;
-    setState(() {
-      _scrollProgress =
-          maxScroll > 0 ? (currentScroll / maxScroll).clamp(0.0, 1.0) : 0.0;
-    });
+    if (maxScroll > 0) {
+      final progress = (currentScroll / maxScroll).clamp(0.0, 1.0);
+      setState(() => _scrollProgress = progress);
+      _activityManager.updateCompletion(progress >= _completionThreshold);
+    }
   }
 
   void _scrollToTop() {
@@ -144,49 +163,54 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
 
   void _handleDoubleTap() {
     HapticFeedback.mediumImpact();
-    setState(() => _isSaved = !_isSaved);
+    final newLiked = !_activityManager.isLiked; // Use manager for state
+    _activityManager.setLiked(newLiked);
+    setState(() {}); // Update UI if needed (e.g., for icons)
     SnackbarHelper.showWithIcon(
       context,
-      _isSaved ? 'Liked!' : 'Unliked',
-      _isSaved ? Icons.favorite : Icons.favorite_border,
+      newLiked ? 'Liked!' : 'Unliked',
+      newLiked ? Icons.favorite : Icons.favorite_border,
     );
   }
 
   void _toggleSave() {
     HapticFeedback.mediumImpact();
-    setState(() => _isSaved = !_isSaved);
+    final newLiked = !_activityManager.isLiked;
+    _activityManager.setLiked(newLiked);
+    setState(() {}); // UI update
   }
 
   // ============================================
   // Navigation Handlers (Swipe)
   // ============================================
   
-  void _handleSwipeRight() {
+  Future<void> _handleSwipeRight() async {
     if (_currentReadIndex > 0) {
       HapticFeedback.mediumImpact();
+      await _activityManager.saveCurrentActivity(); // Save before moving
       setState(() {
         _swipeDirection = SwipeDirection.right;
         _currentReadIndex--;
-        _isSaved = false;
       });
+      _startNewActivity(_readsList[_currentReadIndex]); // Start new
       _scrollToTop();
     } else {
       HapticFeedback.lightImpact();
     }
   }
 
-  void _handleSwipeLeft() {
+  Future<void> _handleSwipeLeft() async {
     if (_currentReadIndex < _readsList.length - 1) {
       HapticFeedback.mediumImpact();
+      await _activityManager.saveCurrentActivity(); // Save before moving
       if (_currentReadIndex > _readsList.length - 2) {
-        // Lazy load more (adapt for topic if needed)
-        _loadMoreReads();
+        await _loadMoreReads();
       }
       setState(() {
         _swipeDirection = SwipeDirection.left;
         _currentReadIndex++;
-        _isSaved = false;
       });
+      _startNewActivity(_readsList[_currentReadIndex]); // Start new
       _scrollToTop();
     } else {
       HapticFeedback.lightImpact();
@@ -311,7 +335,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
                         currentReadItem: _currentReadItem!,
                         fontSize: _fontSizes[_fontSizeIndex],
                         lineHeight: _lineHeights[_fontSizeIndex],
-                        isSaved: _isSaved,
+                        isSaved: false,
                         theme: theme,
                         onSingleTap: _handleSingleTap,
                         onDoubleTap: _handleDoubleTap,

@@ -13,9 +13,9 @@ public class UserActivityController : ControllerBase
 
     [HttpPost]
     [Route("useractivity")]
-    public async Task<IActionResult> Activity(UserActivity userActivity)
+    public async Task<IActionResult> Activity(List<UserActivity> userActivity)
     {
-       await  userActivityService.RecordUserActivity(userActivity);
+       await  userActivityService.RecordUserActivityAsync(userActivity);
        return new OkResult();
     }
 
