@@ -200,7 +200,7 @@ namespace RandomReads.CosmosDB
             try
             {
                 ItemResponse<T> readItemResponse = await container.ReadItemAsync<T>(documentId, partitionKey, cancellationToken: cancellation);
-                resultDocument = readItemResponse;
+                resultDocument = readItemResponse.Resource;
                 logger.LogDebug("ReadItemByDocumentIdAsync RU used", documentId, readItemResponse.RequestCharge);
             }
             // cosmosdb SDK throws an exception when document not found for the id

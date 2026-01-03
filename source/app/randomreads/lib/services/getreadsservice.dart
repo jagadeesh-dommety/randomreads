@@ -11,10 +11,11 @@ class Getreadsservice {
     const url = Constants.homefeed;
     final response = await HttpService.get(url);
 
-    final Map<String, dynamic> json = jsonDecode(response.body);
-    final List list = json['result'];
+final List<dynamic> list = jsonDecode(response.body);
 
-    return list.map((e) => ReadItem.fromJson(e)).toList();
+return list
+    .map((e) => ReadItem.fromJson(e as Map<String, dynamic>))
+    .toList();
   }
 
   Future<ReadItem> fetchReadItem(String id) async {

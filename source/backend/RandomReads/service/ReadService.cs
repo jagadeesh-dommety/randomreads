@@ -1,3 +1,4 @@
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Azure.Cosmos;
 using RandomReads.Models;
@@ -5,25 +6,27 @@ using RandomReads.Models;
 public class ReadService
 {
     private readonly CosmosReadItem _cosmosReadItem;
+    private readonly CosmosUserActivity _cosmosUserActivity;
     private ReadItem[] _readItems = Array.Empty<ReadItem>();
 
-    public ReadService(CosmosReadItem cosmosReadItem)
+    public ReadService(CosmosReadItem cosmosReadItem, CosmosUserActivity cosmosUserActivity)
     {
+        _cosmosUserActivity = cosmosUserActivity;
         _cosmosReadItem = cosmosReadItem;
         InitialLoad();
     }
 
-    public  void InitialLoad()
+    public void InitialLoad()
     {
-        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 30 * FROM c");
-        List<ReadItem> dbreaditems =  _cosmosReadItem.Query<ReadItem>(queryDefinition, new QueryRequestOptions()
+        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 300 * FROM c ORDER BY c._ts DESC");
+        List<ReadItem> dbreaditems = _cosmosReadItem.Query<ReadItem>(queryDefinition, new QueryRequestOptions()
         {
-            MaxItemCount = 30,
+            MaxItemCount = 300,
         })!;
         if (dbreaditems != null && dbreaditems.Count > 0)
         {
             _readItems = dbreaditems.ToArray();
-            Random.Shared.Shuffle(_readItems); 
+            Random.Shared.Shuffle(_readItems);
         }
         else
         {
@@ -58,24 +61,33 @@ public class ReadService
             throw new Exception($"Error retrieving items from Cosmos DB: {ex.Message}", ex);
         }
     }
-
-    public async Task<IEnumerable<ReadItem>> GetHomeFeed()
+    public async Task<List<ReadItem>> GetHomeFeed(string userid)
     {
-        Dictionary<string, ReadItem> feeditems = new Dictionary<string, ReadItem>();
-        try
+        var feedItems = new HashSet<ReadItem>();
+
+        for (int i = 0; i < 10; i++)
         {
-            for (int i = 0; i < 10; i++)
+            var rand = Random.Shared.Next(0, _readItems.Length);
+            var readItem = _readItems[rand];
+
+            try
             {
-                var rand = new Random().Next(0, _readItems.Length-1);
-                feeditems.TryAdd(_readItems[rand].Id, _readItems[rand]);
+               UserActivityDB useractivity = await _cosmosUserActivity.ReadItemByDocumentIdAsync(
+                    readItem.Id,
+                    new PartitionKey(userid));
+                if (useractivity == null)
+                {
+                    feedItems.Add(readItem);
+                }
             }
-            return feeditems.Values.ToList();
+            catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+            {
+                feedItems.Add(readItem);
+            }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Exception occurred while retrieving items from Cosmos DB. {ex.Message}");
-            System.Diagnostics.Trace.TraceInformation($"Exception occurred while retrieving items from Cosmos DB. {ex.Message}");
-            throw new Exception($"Error retrieving items from Cosmos DB: {ex.Message}", ex);
-        }
+
+        return feedItems.ToList(); 
     }
+
+
 }

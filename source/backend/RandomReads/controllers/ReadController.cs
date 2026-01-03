@@ -6,9 +6,11 @@ using RandomReads.Models;
 public class ReadController : ControllerBase
 {
     private readonly ReadService readService;
-    public ReadController(ReadService readService)
+    private readonly CustomRequestContext customRequestContext;
+    public ReadController(ReadService readService, CustomRequestContext customRequestContext)
     {
         this.readService = readService;
+        this.customRequestContext = customRequestContext;
     }
 
     [Authorize]
@@ -42,7 +44,7 @@ public class ReadController : ControllerBase
     [Route("readitems/getfeed")]
     public async Task<IActionResult> GetHomeFeed()
     {
-        var readItems = readService.GetHomeFeed(); 
+        var readItems = await readService.GetHomeFeed(customRequestContext.UserId); 
         return new ObjectResult(readItems);
     }
 }
