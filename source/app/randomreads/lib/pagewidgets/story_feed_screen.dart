@@ -52,7 +52,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
 
   ReadItem? get _currentReadItem =>
       _readsList.isNotEmpty ? _readsList[_currentReadIndex] : null;
-
+  ReadStats currentreadstat = ReadStats(likescount: 5, shareCount: 6, reportscount: 1, hasliked: false, hasshared: false, hasreported: false);
   @override
   void initState() {
     super.initState();
@@ -161,24 +161,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     );
   }
 
-  void _handleDoubleTap() {
-    HapticFeedback.mediumImpact();
-    final newLiked = !_activityManager.isLiked; // Use manager for state
-    _activityManager.setLiked(newLiked);
-    setState(() {}); // Update UI if needed (e.g., for icons)
-    SnackbarHelper.showWithIcon(
-      context,
-      newLiked ? 'Liked!' : 'Unliked',
-      newLiked ? Icons.favorite : Icons.favorite_border,
-    );
-  }
 
-  void _toggleSave() {
-    HapticFeedback.mediumImpact();
-    final newLiked = !_activityManager.isLiked;
-    _activityManager.setLiked(newLiked);
-    setState(() {}); // UI update
-  }
 
   // ============================================
   // Navigation Handlers (Swipe)
@@ -235,6 +218,25 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     } catch (e) {
       // Silent fail or log
     }
+  }
+
+    void _handleDoubleTap() {
+    HapticFeedback.mediumImpact();
+            setState(() {
+          currentreadstat.hasliked = !currentreadstat.hasliked;
+          if (currentreadstat.hasliked){
+            currentreadstat.likescount += 1;
+          } else {
+            currentreadstat.likescount -= 1;
+          }
+          _activityManager.setLiked(currentreadstat.hasliked);
+        });
+    SnackbarHelper.showWithIcon(
+      context,
+      currentreadstat.hasliked ? 'Liked!' : 'Unliked',
+      currentreadstat.hasliked ? Icons.favorite : Icons.favorite_border,
+      
+    );
   }
 
   void _handleHorizontalDrag(DragEndDetails details) {
@@ -333,12 +335,13 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
                         key: ValueKey(_currentReadIndex),
                         contentWidth: contentWidth,
                         currentReadItem: _currentReadItem!,
+                        currentReadStats: currentreadstat,
                         fontSize: _fontSizes[_fontSizeIndex],
                         lineHeight: _lineHeights[_fontSizeIndex],
-                        isSaved: false,
                         theme: theme,
+                        activityManager: _activityManager,
+                        onDoubleTap : _handleDoubleTap,
                         onSingleTap: _handleSingleTap,
-                        onDoubleTap: _handleDoubleTap,
                         onHorizontalDragEnd: _handleHorizontalDrag,
                       ),
                     ),
@@ -358,3 +361,18 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
 }
 
 enum SwipeDirection { left, right }
+
+class ReadStats {
+  int likescount;
+  int shareCount;
+  int reportscount;
+  bool hasliked;
+  bool hasshared;
+  bool hasreported;
+
+  ReadStats({required this.likescount, required this.shareCount, required this.reportscount, required this.hasliked, required this.hasshared, required this.hasreported});
+  
+}
+
+
+

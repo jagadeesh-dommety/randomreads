@@ -3,6 +3,7 @@
 // ============================================
 
 import 'package:randomreads/models/user_activity.dart';
+import 'package:randomreads/pagewidgets/snackbar_helper.dart';
 import 'package:randomreads/services/activity_storage_service.dart';
 import 'package:randomreads/services/user_activity_service.dart';
 
@@ -44,6 +45,7 @@ class ActivityManager {
   void setLiked(bool liked) {
     if (_currentActivity != null) {
       _currentActivity!.isLiked = liked;
+
     }
   }
 
@@ -57,6 +59,10 @@ class ActivityManager {
     if (_currentActivity != null) {
       _currentActivity!.isReported = reported;
     }
+  }
+
+  UserActivity currentActivity() {
+    return _currentActivity!;
   }
 
   Future<void> saveCurrentActivity() async {
