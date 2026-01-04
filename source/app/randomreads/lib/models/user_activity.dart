@@ -26,9 +26,9 @@ class UserActivity {
         'readid': readid,
         'timeSpent': timeSpent,
         'isCompleted': isCompleted,
-        'isLiked': isLiked,
-        'isShared': isShared,
-        'isReported': isReported
+        'islike': isLiked,
+        'isshared': isShared,
+        'isreported': isReported
       };
 
   factory UserActivity.fromJson(Map<String, dynamic> json) {

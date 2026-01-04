@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:randomreads/common/activity_manager.dart';
+import 'package:randomreads/models/read_stats.dart';
 import 'package:randomreads/models/readitem.dart';
 import 'package:randomreads/pagewidgets/read_footer.dart';
 import 'package:randomreads/pagewidgets/read_title_widget.dart';

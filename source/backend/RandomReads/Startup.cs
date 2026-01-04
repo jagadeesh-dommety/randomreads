@@ -31,6 +31,7 @@ namespace RandomReads
             services.AuthServiceExtension(Configuration);
             services.AddSingleton<IReadActivityAggregator, ReadActivityAggregator>();
             services.AddHostedService<ReadActivityBackground>();
+            services.AddHostedService<ReadCacheRefresher>();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddCors(options =>

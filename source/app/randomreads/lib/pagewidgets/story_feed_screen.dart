@@ -4,6 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:randomreads/common/activity_manager.dart';
+import 'package:randomreads/models/read.dart';
+import 'package:randomreads/models/read_stats.dart';
 import 'package:randomreads/models/readitem.dart';
 import 'package:randomreads/appbars/randomreads_app_bar.dart';
 import 'package:randomreads/pagewidgets/reading_content.dart';
@@ -35,7 +37,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
   final ActivityManager _activityManager = ActivityManager(); // New modular class for activity
   
   // State variables
-  List<ReadItem> _readsList = [];
+  List<Read> _readsList = [];
   int _currentReadIndex = 0;
   double _scrollProgress = 0.0;
   bool _isLoading = true;
@@ -51,8 +53,9 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
   SwipeDirection _swipeDirection = SwipeDirection.left;
 
   ReadItem? get _currentReadItem =>
-      _readsList.isNotEmpty ? _readsList[_currentReadIndex] : null;
-  ReadStats currentreadstat = ReadStats(likescount: 5, shareCount: 6, reportscount: 1, hasliked: false, hasshared: false, hasreported: false);
+      _readsList.isNotEmpty ? _readsList[_currentReadIndex].readitem : null;
+  ReadStats? get _currentReadStats => 
+     _readsList.isNotEmpty ? _readsList[_currentReadIndex].readstats : null;
   @override
   void initState() {
     super.initState();
@@ -75,7 +78,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
   
   Future<void> _loadReads() async {
     try {
-      List<ReadItem> reads;
+      List<Read> reads;
       if (widget.topic != null) {
         // Topic-specific fetch (implement in service)
         reads = await _readsService.fetchReadsByTopic(widget.topic!);
@@ -90,7 +93,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
           _readsList = reads;
           _isLoading = false;
         });
-       _startNewActivity(reads[_currentReadIndex]);
+       _startNewActivity(reads[_currentReadIndex].readitem);
       }
     } catch (e) {
       if (mounted) {
@@ -175,7 +178,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
         _swipeDirection = SwipeDirection.right;
         _currentReadIndex--;
       });
-      _startNewActivity(_readsList[_currentReadIndex]); // Start new
+      _startNewActivity(_readsList[_currentReadIndex].readitem); // Start new
       _scrollToTop();
     } else {
       HapticFeedback.lightImpact();
@@ -193,7 +196,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
         _swipeDirection = SwipeDirection.left;
         _currentReadIndex++;
       });
-      _startNewActivity(_readsList[_currentReadIndex]); // Start new
+      _startNewActivity(_readsList[_currentReadIndex].readitem); // Start new
       _scrollToTop();
     } else {
       HapticFeedback.lightImpact();
@@ -204,7 +207,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
 
   Future<void> _loadMoreReads() async {
     try {
-      List<ReadItem> moreReads;
+      List<Read> moreReads;
       if (widget.topic != null) {
         moreReads = await _readsService.fetchReadsByTopic(widget.topic!);
       } else {
@@ -223,18 +226,18 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     void _handleDoubleTap() {
     HapticFeedback.mediumImpact();
             setState(() {
-          currentreadstat.hasliked = !currentreadstat.hasliked;
-          if (currentreadstat.hasliked){
-            currentreadstat.likescount += 1;
+          _currentReadStats?.hasliked = !_currentReadStats!.hasliked;
+          if (_currentReadStats!.hasliked){
+            _currentReadStats!.likescount += 1;
           } else {
-            currentreadstat.likescount -= 1;
+            _currentReadStats!.likescount -= 1;
           }
-          _activityManager.setLiked(currentreadstat.hasliked);
+          _activityManager.setLiked(_currentReadStats!.hasliked);
         });
     SnackbarHelper.showWithIcon(
       context,
-      currentreadstat.hasliked ? 'Liked!' : 'Unliked',
-      currentreadstat.hasliked ? Icons.favorite : Icons.favorite_border,
+      _currentReadStats!.hasliked ? 'Liked!' : 'Unliked',
+      _currentReadStats!.hasliked ? Icons.favorite : Icons.favorite_border,
       
     );
   }
@@ -335,7 +338,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
                         key: ValueKey(_currentReadIndex),
                         contentWidth: contentWidth,
                         currentReadItem: _currentReadItem!,
-                        currentReadStats: currentreadstat,
+                        currentReadStats: _currentReadStats!,
                         fontSize: _fontSizes[_fontSizeIndex],
                         lineHeight: _lineHeights[_fontSizeIndex],
                         theme: theme,
@@ -361,18 +364,3 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
 }
 
 enum SwipeDirection { left, right }
-
-class ReadStats {
-  int likescount;
-  int shareCount;
-  int reportscount;
-  bool hasliked;
-  bool hasshared;
-  bool hasreported;
-
-  ReadStats({required this.likescount, required this.shareCount, required this.reportscount, required this.hasliked, required this.hasshared, required this.hasreported});
-  
-}
-
-
-

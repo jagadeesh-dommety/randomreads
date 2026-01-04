@@ -40,6 +40,7 @@ public static class ServiceExtensions
         services.AddSingleton<UserActivityService>();
         services.AddSingleton<ContentGenService>();
         services.AddSingleton<ReadService>();
+        services.AddSingleton<ReadCacheService>();
 
         return services;
     }

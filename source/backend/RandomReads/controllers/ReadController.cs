@@ -35,7 +35,7 @@ public class ReadController : ControllerBase
         {
             return BadRequest("Invalid topic specified.");
         }
-        var readItems = await readService.GetAllReadItemsAsync(topic, count);
+        var readItems = await readService.GetReadItemByTopic(topic, count, customRequestContext.UserId);
         return new OkObjectResult(readItems);
     }
 

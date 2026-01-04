@@ -5,42 +5,24 @@ using RandomReads.Models;
 
 public class ReadService
 {
-    private readonly CosmosReadItem _cosmosReadItem;
-    private readonly CosmosUserActivity _cosmosUserActivity;
-    private ReadItem[] _readItems = Array.Empty<ReadItem>();
+    private readonly ReadCacheService _cache;
+    private readonly CosmosUserActivity _userActivity;
 
-    public ReadService(CosmosReadItem cosmosReadItem, CosmosUserActivity cosmosUserActivity)
+    public ReadService(
+        ReadCacheService cache,
+        CosmosUserActivity userActivity)
     {
-        _cosmosUserActivity = cosmosUserActivity;
-        _cosmosReadItem = cosmosReadItem;
-        InitialLoad();
+        _cache = cache;
+        _userActivity = userActivity;
     }
 
-    public void InitialLoad()
-    {
-        QueryDefinition queryDefinition = new QueryDefinition("SELECT TOP 300 * FROM c ORDER BY c._ts DESC");
-        List<ReadItem> dbreaditems = _cosmosReadItem.Query<ReadItem>(queryDefinition, new QueryRequestOptions()
-        {
-            MaxItemCount = 300,
-        })!;
-        if (dbreaditems != null && dbreaditems.Count > 0)
-        {
-            _readItems = dbreaditems.ToArray();
-            Random.Shared.Shuffle(_readItems);
-        }
-        else
-        {
-            throw new NullReferenceException("unable to get the reads from cosmosdb");
-        }
 
-    }
-
-    public async Task<ReadItem> GetReadItemByIdAsync(string id, Topic topic)
+    public async Task<Read> GetReadItemByIdAsync(string id, Topic topic)
     {
         try
         {
-            var readItem = await _cosmosReadItem.ReadItemByDocumentIdAsync(id, new Microsoft.Azure.Cosmos.PartitionKey((int)topic));
-            return readItem;
+            var read = _cache.Snapshot().Where(x => x.readitem.Id == id).First();
+            return read;
         }
         catch (Exception ex)
         {
@@ -48,46 +30,51 @@ public class ReadService
         }
     }
 
-    public async Task<IEnumerable<ReadItem>> GetAllReadItemsAsync(Topic topic, int count)
+    public async Task<IEnumerable<Read>> GetReadItemByTopic(Topic topic, int count, string userid)
     {
         try
         {
-            return await _cosmosReadItem.ReadManyByPartitionId(new Microsoft.Azure.Cosmos.PartitionKey((int)topic), count);
+            IEnumerable<Read> reads = _cache.Snapshot().Where(x => x.readitem.Topic == topic).Take(count);
+            var tasks = reads.Select(x => GetUserReadAsync(userid, x));
+            return (await Task.WhenAll(tasks)).ToList();
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Exception occurred while retrieving items from Cosmos DB. {ex.Message}");
-            System.Diagnostics.Trace.TraceInformation($"Exception occurred while retrieving items from Cosmos DB. {ex.Message}");
             throw new Exception($"Error retrieving items from Cosmos DB: {ex.Message}", ex);
         }
     }
-    public async Task<List<ReadItem>> GetHomeFeed(string userid)
+
+    private async Task<Read> GetUserReadAsync(string userId, Read read)
     {
-        var feedItems = new HashSet<ReadItem>();
-
-        for (int i = 0; i < 10; i++)
+        try
         {
-            var rand = Random.Shared.Next(0, _readItems.Length);
-            var readItem = _readItems[rand];
-            if (readItem.IsDeleted) continue;
-            try
+            var ua = await _userActivity.ReadItemByDocumentIdAsync(
+                read.readitem.Id,
+                new PartitionKey(userId)
+            );
+
+            if(ua != null)
             {
-               UserActivityDB useractivity = await _cosmosUserActivity.ReadItemByDocumentIdAsync(
-                    readItem.Id,
-                    new PartitionKey(userid));
-                if (useractivity == null)
-                {
-                    feedItems.Add(readItem);
-                }
+                read.readstats.hasliked = ua.isliked;
+                read.readstats.hasreported = ua.isreported;
+                read.readstats.hasshared = ua.isshared;
             }
-            catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
-            {
-                feedItems.Add(readItem);
-            }
+            return read;
         }
-
-        return feedItems.ToList(); 
+        catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+        {
+            return read;
+        }
     }
+    public async Task<List<Read>> GetHomeFeed(string userid, int count = 20)
+    {
+        var snapshot = _cache.Snapshot();
+        var selected = snapshot.Take(count);
 
-
+        // batch user activity reads
+        var tasks = selected.Select(item =>
+            GetUserReadAsync(userid, item)
+        );
+        return (await Task.WhenAll(tasks)).ToList();
+    }
 }

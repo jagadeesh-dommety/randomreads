@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:randomreads/common/activity_manager.dart';
+import 'package:randomreads/models/read_stats.dart';
 import 'package:randomreads/pagewidgets/story_feed_screen.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -33,14 +34,14 @@ class _ReadFooterState extends State<ReadFooter> {
 
         _actionItem(
           icon: Icons.ios_share,
-          count: widget.readStats.shareCount,
+          count: widget.readStats.sharecount,
           onTap: () {
             SharePlus.instance.share(
   ShareParams(text: 'check this read')
 );
           widget.activityManager.setShared(true);
           widget.readStats.hasshared = true;
-          widget.readStats.shareCount +=1;
+          widget.readStats.sharecount +=1;
           },
         ),
 
