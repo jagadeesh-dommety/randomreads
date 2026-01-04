@@ -69,7 +69,7 @@ public class ReadService
         {
             var rand = Random.Shared.Next(0, _readItems.Length);
             var readItem = _readItems[rand];
-
+            if (readItem.IsDeleted) continue;
             try
             {
                UserActivityDB useractivity = await _cosmosUserActivity.ReadItemByDocumentIdAsync(

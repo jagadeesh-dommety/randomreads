@@ -7,7 +7,7 @@ public class ReadActivityBackground : BackgroundService
     private readonly ILogger<ReadActivityBackground> _logger;
     private readonly CosmosReadActivity _cosmosReadActivity;
 
-    private static readonly TimeSpan FlushInterval = TimeSpan.FromMinutes(2);
+    private static readonly TimeSpan FlushInterval = TimeSpan.FromMinutes(5);
 
     public ReadActivityBackground(
         ILogger<ReadActivityBackground> logger,

@@ -22,7 +22,6 @@ class ActivityManager {
     bool isLiked = false,
   }) {
     _stopwatch?.stop();
-    _saveIfBatchFull(); // Flush if needed
     _currentActivity = UserActivity(
       userid: userid,
       topic: topic,
