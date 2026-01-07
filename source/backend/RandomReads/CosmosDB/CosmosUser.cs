@@ -5,7 +5,7 @@ public class CosmosUser : CosmosDbClientBase<UserDb>
     {
         private readonly bool cosmosuser;
 
-        public CosmosUser(CosmosDBConfig? cosmosDBConfig, ILogger logger) : base(cosmosDBConfig, logger)
+        public CosmosUser(CosmosDBConfig? cosmosDBConfig, ILogger logger, IConfiguration configuration) : base(cosmosDBConfig, logger, configuration)
         {
             ArgumentNullException.ThrowIfNull(cosmosDBConfig, nameof(cosmosDBConfig));
             cosmosuser = this.Initialize().Result;

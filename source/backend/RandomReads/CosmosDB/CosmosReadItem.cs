@@ -5,7 +5,7 @@ public class CosmosReadItem : CosmosDbClientBase<ReadItem>
     {
         private readonly bool cosmosReadItem;
 
-        public CosmosReadItem(CosmosDBConfig? cosmosDBConfig, ILogger logger) : base(cosmosDBConfig, logger)
+        public CosmosReadItem(CosmosDBConfig? cosmosDBConfig, ILogger logger, IConfiguration configuration) : base(cosmosDBConfig, logger, configuration)
         {
             ArgumentNullException.ThrowIfNull(cosmosDBConfig, nameof(cosmosDBConfig));
             cosmosReadItem = this.Initialize().Result;

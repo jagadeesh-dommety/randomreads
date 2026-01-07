@@ -21,23 +21,25 @@ public class ContentGenAgent
     const string projectEndpoint = "https://randomreads-content-resource.services.ai.azure.com/api/projects/randomreads-content";
     const string agentName = "content-generator";
     const string agentVersion = "4";
+    private readonly string? managedIdentityClientId;
 
-    public ContentGenAgent()
+    public ContentGenAgent(IConfiguration configuration)
     {
+        this.managedIdentityClientId = configuration["ManagedIdentityClientId"];
         projectClient = new(endpoint: new Uri(projectEndpoint), tokenProvider: new DefaultAzureCredential(new DefaultAzureCredentialOptions
         {
-            ManagedIdentityClientId = Constants.ManagedIdentityClientId
+            ManagedIdentityClientId = managedIdentityClientId
         }));
         agentReference = new AgentReference(agentName, agentVersion);
     }
 
-    public static async Task<ReadOnlyMemory<float>> CreateEmbeddings(string content)
+    public async Task<ReadOnlyMemory<float>> CreateEmbeddings(string content)
     {
         var embeddingsClient = new AzureOpenAIClient(
             new Uri(Constants.embeddingsEndpoint),
             new DefaultAzureCredential(new DefaultAzureCredentialOptions
             {
-                ManagedIdentityClientId = Constants.ManagedIdentityClientId
+                ManagedIdentityClientId = this.managedIdentityClientId
             })
         );
         var client = embeddingsClient.GetEmbeddingClient(

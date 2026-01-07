@@ -113,3 +113,8 @@ az cosmosdb sql role assignment create --account-name randomreads --resource-gro
 
 
   //SHA1 - 48:89:A1:DD:A5:25:32:4D:A3:9D:1F:47:92:8C:ED:82:39:83:AC:B6
+
+
+  //No subscriptions in f8cdef31-a31e-4b4a-93e4-5f571e91255a (f8cdef31-a31e-4b4a-93e4-5f571e91255a) directory - Switch to another directory.
+
+  ---

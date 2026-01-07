@@ -16,8 +16,9 @@ namespace RandomReads.CosmosDB
         private readonly string databaseId;
         private readonly string containerId;
         private readonly string partitionKeyPath;
+        private readonly string? managedIdentityClientId;
 
-        public CosmosDbClientBase(CosmosDBConfig cosmosDBConfig, ILogger logger)
+        public CosmosDbClientBase(CosmosDBConfig cosmosDBConfig, ILogger logger, IConfiguration configuration)
         {
             ArgumentNullException.ThrowIfNull(cosmosDBConfig);
 
@@ -26,7 +27,7 @@ namespace RandomReads.CosmosDB
             databaseId = cosmosDBConfig.DatabaseId;
             containerId = cosmosDBConfig.ContainerId;
             partitionKeyPath = cosmosDBConfig.PartitionKeyPath;
-
+            this.managedIdentityClientId = configuration["ManagedIdentityClientId"];
             this.logger = logger;
         }
 
@@ -40,7 +41,7 @@ namespace RandomReads.CosmosDB
             {
                 cosmosClient = new CosmosClient(endpointUrl, new DefaultAzureCredential(new DefaultAzureCredentialOptions
                 {
-                    ManagedIdentityClientId = Constants.ManagedIdentityClientId
+                    ManagedIdentityClientId = managedIdentityClientId
                 }));
                 database = await cosmosClient.CreateDatabaseIfNotExistsAsync(databaseId);
                 container = await database.CreateContainerIfNotExistsAsync(containerId, partitionKeyPath);

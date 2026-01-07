@@ -31,7 +31,7 @@ public class ContentGenService
         {
             try
             {
-                var embedding = await ContentGenAgent.CreateEmbeddings($"{item.Title}  {item.Content}");
+                var embedding = await _contentGenAgent.CreateEmbeddings($"{item.Title}  {item.Content}");
                 EmbeddingItem embeddingItem = new EmbeddingItem(item.Id, item.Topic, embedding.ToArray());
                 await embeddingService.CreateEmbeddingIfNotSimilarAsync(item, embedding.ToArray(), 0.80);
             }
@@ -57,7 +57,7 @@ public class ContentGenService
                 System.Diagnostics.Trace.TraceInformation("Content generated based on storyline.");
 
                 // Create embeddings for the generated content
-                var embedding = await ContentGenAgent.CreateEmbeddings($"{read.Title}  {read.Content}");
+                var embedding = await _contentGenAgent.CreateEmbeddings($"{read.Title}  {read.Content}");
                 EmbeddingItem embeddingItem = new EmbeddingItem(read.Id, read.Topic, embedding.ToArray());
 
                 // Save embedding if not similar

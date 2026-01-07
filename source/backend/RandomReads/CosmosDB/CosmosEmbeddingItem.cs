@@ -6,7 +6,7 @@ public class CosmosEmbeddingItem : CosmosDbClientBase<EmbeddingItem>
     
     private readonly bool cosmosEmbeddingItem;
 
-    public CosmosEmbeddingItem(CosmosDBConfig? cosmosDBConfig, ILogger logger) : base(cosmosDBConfig, logger)
+    public CosmosEmbeddingItem(CosmosDBConfig? cosmosDBConfig, ILogger logger, IConfiguration configuration) : base(cosmosDBConfig, logger, configuration)
     {
         ArgumentNullException.ThrowIfNull(cosmosDBConfig, nameof(cosmosDBConfig));
         cosmosEmbeddingItem = this.Initialize().Result;
