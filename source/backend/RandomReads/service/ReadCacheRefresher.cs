@@ -13,7 +13,7 @@ public class ReadCacheRefresher : BackgroundService
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            await Task.Delay(TimeSpan.FromMinutes(30), stoppingToken);
+            await Task.Delay(TimeSpan.FromMinutes(180), stoppingToken);
             await _readCacheService.RefreshAsync();
         }
     }

@@ -100,6 +100,31 @@ public class UserActivityService
         return true;
     }
 
+    public async Task<IReadOnlyList<UserActivityDB>> GetUserLikesAsync(string userid)
+{
+    var queryDefinition =
+        new QueryDefinition("SELECT TOP 20 * FROM c WHERE c.isliked = true");
+
+    var userActivities = await _cosmosUserActivity.QueryAsync<UserActivityDB>(
+        queryDefinition,
+        new QueryRequestOptions
+        {
+            PartitionKey = new PartitionKey(userid),
+            MaxItemCount = 20
+        });
+
+    return userActivities;
+}
+
+    public async Task<UserActivityDB> GetUserActivityAsync(string userid, string readid)
+    {
+      return  await _cosmosUserActivity.ReadItemByDocumentIdAsync(
+                readid,
+                new PartitionKey(userid)
+            );
+    }
+
+
     private UserActivityDB CreateNew(UserActivity activity)
     {
         return new UserActivityDB

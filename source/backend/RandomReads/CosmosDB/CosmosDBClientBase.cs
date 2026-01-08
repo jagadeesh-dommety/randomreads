@@ -357,6 +357,22 @@ namespace RandomReads.CosmosDB
             return result;
         }
 
+        public async Task<List<T>> QueryAsync<T>(    QueryDefinition query,    QueryRequestOptions requestOptions)
+        {
+            var result = new List<T>();
+
+            using FeedIterator<T> feedIterator =
+                container.GetItemQueryIterator<T>(query, requestOptions: requestOptions);
+
+            while (feedIterator.HasMoreResults)
+            {
+                FeedResponse<T> response = await feedIterator.ReadNextAsync();
+                result.AddRange(response);
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Read many items from CosmosDB for single partition
         /// </summary>

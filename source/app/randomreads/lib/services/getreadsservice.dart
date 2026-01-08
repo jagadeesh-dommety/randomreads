@@ -19,6 +19,17 @@ return list
     .toList();
   }
 
+    Future<List<Read>> fetchLikedPosts() async {
+    const url = Constants.likedreads;
+    final response = await HttpService.get(url);
+
+final List<dynamic> list = jsonDecode(response.body);
+
+return list
+    .map((e) => Read.fromJson(e as Map<String, dynamic>))
+    .toList();
+  }
+
   Future<Read> fetchReadItem(String id) async {
     final url = "${Constants.apiBaseUrl}${Constants.fetchReadbyId}$id";
     final response =

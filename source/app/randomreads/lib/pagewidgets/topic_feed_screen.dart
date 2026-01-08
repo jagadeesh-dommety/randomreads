@@ -16,6 +16,6 @@ class _TopicFeedScreenState extends State<TopicFeedScreen> {
   Widget build(BuildContext context) {
     String topicName = widget.topicName;
     String enumTopic = TopicUtils.getEnumFromDisplayName(topicName);
-    return StoryFeedScreen(title: widget.topicName, topic: enumTopic);
+    return StoryFeedScreen(title: widget.topicName, topic: enumTopic, likedscreen:false);
   }
 }

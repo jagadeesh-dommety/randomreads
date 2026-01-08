@@ -18,13 +18,15 @@ import 'package:randomreads/services/getreadsservice.dart';
 class StoryFeedScreen extends StatefulWidget {
   final String title;
   final String? topic;  // null for random/all; non-null for topic-specific
+  final bool likedscreen;
   final VoidCallback? toggleTheme;
 
   const StoryFeedScreen({
     super.key,
     required this.title,
     this.topic,
-    this.toggleTheme,
+    required this.likedscreen,
+    this.toggleTheme
   });
 
   @override
@@ -82,13 +84,14 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
       if (widget.topic != null) {
         // Topic-specific fetch (implement in service)
         reads = await _readsService.fetchReadsByTopic(widget.topic!);
-      } else {
+      }  else if (widget.likedscreen){
+        reads = await _readsService.fetchLikedPosts();
+      }
+       else {
         // Random/all fetch
         reads = await _readsService.fetchHomeFeed();
       }
       if (mounted) {
-        
-        
         setState(() {
           _readsList = reads;
           _isLoading = false;
@@ -210,7 +213,10 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
       List<Read> moreReads;
       if (widget.topic != null) {
         moreReads = await _readsService.fetchReadsByTopic(widget.topic!);
-      } else {
+      } else if (widget.likedscreen){
+        moreReads = await _readsService.fetchLikedPosts();
+      }
+       else {
         moreReads = await _readsService.fetchHomeFeed();
       }
       if (mounted && moreReads.isNotEmpty) {
@@ -309,15 +315,14 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
               physics: const AlwaysScrollableScrollPhysics(),
               slivers: [
                 // Reusable SliverAppBar (replace with RandomreadsAppBar if updated to take title/toggleTheme)
-                (widget.topic == null || widget.topic!.isEmpty) ? 
-                RandomreadsAppBar(theme: theme) :
-                TopicAppBar(title: widget.topic!, theme: theme, onSortSelected: (sorttype) {
+                widget.likedscreen || (widget.topic?.isNotEmpty ?? false) ? 
+                TopicAppBar(title: widget.likedscreen ? 'Liked Posts' : widget.topic!, theme: theme, onSortSelected: (sorttype) {
                   HapticFeedback.lightImpact();
                   setState(() {
                     _currentSort = sorttype;
                   });
                   _loadReads();
-                },),
+                },) : RandomreadsAppBar(theme: theme) ,
                 SliverToBoxAdapter(
                   child: Center(
                     child: AnimatedSwitcher(

@@ -6,11 +6,11 @@ using RandomReads.Models;
 public class ReadService
 {
     private readonly ReadCacheService _cache;
-    private readonly CosmosUserActivity _userActivity;
+    private readonly UserActivityService _userActivity;
 
     public ReadService(
         ReadCacheService cache,
-        CosmosUserActivity userActivity)
+        UserActivityService userActivity)
     {
         _cache = cache;
         _userActivity = userActivity;
@@ -48,10 +48,7 @@ public class ReadService
     {
         try
         {
-            var ua = await _userActivity.ReadItemByDocumentIdAsync(
-                read.readitem.Id,
-                new PartitionKey(userId)
-            );
+            UserActivityDB ua = await _userActivity.GetUserActivityAsync(userId, read.readitem.Id);
 
             if(ua != null)
             {
@@ -76,5 +73,24 @@ public class ReadService
             GetUserReadAsync(userid, item)
         );
         return (await Task.WhenAll(tasks)).ToList();
+    }
+    public async Task<List<Read>> GetLikedReads(string userid)
+    {
+        IEnumerable<UserActivityDB> likedreads =  await _userActivity.GetUserLikesAsync(userid);
+        List<Read> reads = new List<Read>();
+        foreach (UserActivityDB userActivity in likedreads)
+        {
+          Read? read =  _cache.Snapshot().Where(x => x.readitem.Id == userActivity.Id).FirstOrDefault();
+          if (read != null)
+            {
+                read.readstats.hasliked = userActivity.isliked;
+                read.readstats.hasshared = userActivity.isshared;
+                read.readstats.hasreported = userActivity.isreported;
+
+                reads.Add(read);
+            }
+        }
+        return reads;
+        
     }
 }

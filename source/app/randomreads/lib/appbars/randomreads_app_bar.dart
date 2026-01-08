@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:randomreads/pagewidgets/search_topic_screen.dart';
+import 'package:randomreads/pagewidgets/story_feed_screen.dart';
 import 'package:randomreads/pagewidgets/topic_feed_screen.dart';
 
 class RandomreadsAppBar extends StatelessWidget {
@@ -27,7 +28,11 @@ class RandomreadsAppBar extends StatelessWidget {
       ),
       actions: [
         IconButton(
-            onPressed: () {}, icon: const Icon(Icons.favorite_border_outlined)),
+            onPressed: () {
+              Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const StoryFeedScreen(title: "Liked Posts", likedscreen: true)),
+            );
+            }, icon: const Icon(Icons.favorite_border_outlined)),
         IconButton(onPressed: () async {
           final selectedTopic = await Navigator.of(context).push<String>(
             MaterialPageRoute(builder: (context) => const SearchTopicScreen()),

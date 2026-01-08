@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RandomReads.Models;
@@ -45,6 +46,15 @@ public class ReadController : ControllerBase
     public async Task<IActionResult> GetHomeFeed()
     {
         var readItems = await readService.GetHomeFeed(customRequestContext.UserId); 
+        return new ObjectResult(readItems);
+    }
+
+    [Authorize]
+    [HttpGet]
+    [Route("readitems/likereads")]
+    public  async Task<IActionResult> GetLikeReads()
+    {
+        var readItems = await readService.GetLikedReads(customRequestContext.UserId); 
         return new ObjectResult(readItems);
     }
 }

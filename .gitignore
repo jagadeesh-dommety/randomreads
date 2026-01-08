@@ -58,3 +58,4 @@ coverage/
 # Publish results
 wwwroot/
 build/
+source/backend/RandomReads/Properties/launchSettings.json

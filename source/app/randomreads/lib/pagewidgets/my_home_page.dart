@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     return StoryFeedScreen(title: "RandomReads",
-    toggleTheme: widget.toggleTheme,);
+    toggleTheme: widget.toggleTheme,likedscreen:false);
   }
 }
 
