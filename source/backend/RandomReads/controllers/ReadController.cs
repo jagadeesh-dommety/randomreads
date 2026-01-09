@@ -59,10 +59,11 @@ public class ReadController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet]
+    [HttpPost]
     [Route("readitems/submitstoryline")]
-    public  async Task<IActionResult> submitstoryline()
+    public  async Task<IActionResult> submitstoryline(string storyline)
     {
+        Console.WriteLine($"Received storyline: {storyline}");
         return new ObjectResult("success");
     }
 }
