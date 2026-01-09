@@ -57,4 +57,12 @@ public class ReadController : ControllerBase
         var readItems = await readService.GetLikedReads(customRequestContext.UserId); 
         return new ObjectResult(readItems);
     }
+
+    [Authorize]
+    [HttpGet]
+    [Route("readitems/submitstoryline")]
+    public  async Task<IActionResult> submitstoryline()
+    {
+        return new ObjectResult("success");
+    }
 }

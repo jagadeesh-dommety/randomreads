@@ -19,7 +19,7 @@ class SearchTopicSliverAppBar extends StatelessWidget {
       floating: true,
       snap: true,
       elevation: 0,
-      backgroundColor: theme.colorScheme.surface,
+      backgroundColor: theme.colorScheme.surface.withOpacity(0.9),
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () => Navigator.pop(context),
@@ -41,7 +41,7 @@ class SearchTopicSliverAppBar extends StatelessWidget {
                     )
                   : null,
               filled: true,
-              fillColor: Colors.grey.shade100,
+              fillColor: theme.colorScheme.surface.withOpacity(0.9),
               contentPadding: const EdgeInsets.symmetric(horizontal: 12),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),

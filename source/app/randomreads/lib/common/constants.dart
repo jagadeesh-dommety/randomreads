@@ -10,6 +10,7 @@ static const String usersignin = "$apiBaseUrl/usersignin";
 static const String homefeed = "$apiBaseUrl/readitems/getfeed";
 static const String updateuseractivity = "$apiBaseUrl/useractivity";
 static const String likedreads = "$apiBaseUrl/readitems/likereads";
+static const String submitstoryline = "$apiBaseUrl/readitems/submitstoryline";
 }
 
 //https://randomreadsprod-fbe5a0bmdnfndhej.eastus-01.azurewebsites.net/

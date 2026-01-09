@@ -53,4 +53,16 @@ return list
     final List<dynamic> data = jsonDecode(response.body);
     return data.map((e) => Read.fromJson(e)).toList();
   }
+
+  void submitReadSuggestion(String storyline) {
+    const url = "${Constants.apiBaseUrl}/readitems/submitstoryline";
+    final body = jsonEncode({'storyline': storyline});
+    HttpService.post(url, body: body, authRequired: true).then((response) {
+      if (response.statusCode == 200) {
+        // Successfully submitted
+      } else {
+        // Handle error
+      }
+    });
+  }
 }

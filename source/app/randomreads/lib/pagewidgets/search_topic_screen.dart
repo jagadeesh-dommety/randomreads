@@ -46,7 +46,7 @@ class _SearchTopicScreenState extends State<SearchTopicScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: CustomScrollView(
         slivers: [
           // 🔹 Sliver App Bar

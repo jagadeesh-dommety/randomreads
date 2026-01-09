@@ -44,24 +44,31 @@ public class ReadService
         }
     }
 
-    private async Task<Read> GetUserReadAsync(string userId, Read read)
+    private async Task<Read?> GetUserReadAsync(string userId, Read read, bool ishomefeed = false)
     {
         try
-        {
-            UserActivityDB ua = await _userActivity.GetUserActivityAsync(userId, read.readitem.Id);
+    {
+        UserActivityDB ua =
+            await _userActivity.GetUserActivityAsync(userId, read.readitem.Id);
 
-            if(ua != null)
-            {
-                read.readstats.hasliked = ua.isliked;
-                read.readstats.hasreported = ua.isreported;
-                read.readstats.hasshared = ua.isshared;
-            }
-            return read;
-        }
-        catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+        if (ishomefeed && ua != null)
         {
-            return read;
+            return null;
         }
+
+        if (ua != null)
+        {
+            read.readstats.hasliked = ua.isliked;
+            read.readstats.hasreported = ua.isreported;
+            read.readstats.hasshared = ua.isshared;
+        }
+
+        return read;
+    }
+    catch (CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+    {
+        return read;
+    }
     }
     public async Task<List<Read>> GetHomeFeed(string userid, int count = 20)
     {
@@ -70,9 +77,15 @@ public class ReadService
 
         // batch user activity reads
         var tasks = selected.Select(item =>
-            GetUserReadAsync(userid, item)
+            GetUserReadAsync(userid, item, true)
         );
-        return (await Task.WhenAll(tasks)).ToList();
+        
+    var results = await Task.WhenAll(tasks);
+
+    return results
+        .Where(r => r != null)
+        .Cast<Read>()
+        .ToList();
     }
     public async Task<List<Read>> GetLikedReads(string userid)
     {

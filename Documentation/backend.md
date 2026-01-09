@@ -126,6 +126,7 @@ Show swipe
 Menu
   Username
   No email
+  Dark/Light mode
   Submit a read story line
   Activity
   logout

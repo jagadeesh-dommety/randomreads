@@ -8,10 +8,12 @@ import 'package:randomreads/models/read.dart';
 import 'package:randomreads/models/read_stats.dart';
 import 'package:randomreads/models/readitem.dart';
 import 'package:randomreads/appbars/randomreads_app_bar.dart';
+import 'package:randomreads/pagewidgets/read_menu_drawer.dart';
 import 'package:randomreads/pagewidgets/reading_content.dart';
 import 'package:randomreads/pagewidgets/reading_progress_indicator.dart';
 import 'package:randomreads/pagewidgets/snackbar_helper.dart';
 import 'package:randomreads/appbars/topic_app_bar.dart';
+import 'package:randomreads/pagewidgets/submit_storyline_modal.dart';
 import 'package:randomreads/services/auth_storage_service.dart';
 import 'package:randomreads/services/getreadsservice.dart';
 
@@ -256,6 +258,12 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     }
   }
 
+  void _onSubmitReadSuggestion(String storyline) {
+    _readsService.submitReadSuggestion(storyline);
+    SnackbarHelper.showInfo(context, 'Thank you for your submission!');
+    // Optionally refresh or update state
+  }
+
   // ============================================
   // Build Method
   // ============================================
@@ -304,6 +312,31 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     }
 
     return Scaffold(
+      drawer: ReadMenuDrawer(
+        username: 'Jagadeesh',
+        onToggleTheme: () {
+          if (widget.toggleTheme != null) {
+            widget.toggleTheme!();
+          }
+        },
+        onSubmitRead: () {
+          // navigate
+           Navigator.pop(context); // close drawer first
+
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            builder: (context) =>  SubmitStorylineModal(onSubmitted: _onSubmitReadSuggestion),
+          );
+        },
+        onUserActivity: () {
+          // navigate
+        },
+        onLogout: () {
+          
+        },
+      ),
       backgroundColor: theme.colorScheme.surface,
       body: Stack(
         children: [

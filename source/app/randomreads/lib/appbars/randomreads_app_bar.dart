@@ -18,7 +18,12 @@ class RandomreadsAppBar extends StatelessWidget {
       pinned: false,
       backgroundColor: theme.colorScheme.surface.withOpacity(0.95),
       elevation: 0,
-      leading: const Icon(Icons.menu),
+      leading: GestureDetector(
+        onTap: () {
+          Scaffold.of(context).openDrawer();
+        },
+        child: const Icon(Icons.menu),
+      ),
       centerTitle: true, // Ensures the title is centered
       title: Text(
         "RandomReads",
