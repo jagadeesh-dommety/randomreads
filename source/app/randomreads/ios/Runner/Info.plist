@@ -45,6 +45,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>AssociatedDomains</key>
+	<array>
+		<string>applinks:therandomreads.com</string>
+		<string>applinks:www.therandomreads.com</string>
+		<string>applinks:randomreadsprod-fbe5a0bmdnfndhej.eastus-01.azurewebsites.net</string>
+	</array>
 	<key>LSApplicationQueriesSchemes</key>
 <array>
   <string>share</string>

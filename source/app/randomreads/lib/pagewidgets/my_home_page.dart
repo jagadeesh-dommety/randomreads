@@ -11,8 +11,8 @@ import 'package:uuid/uuid.dart';
 
 class MyHomePage extends StatefulWidget {
   final VoidCallback toggleTheme;
-
-  const MyHomePage({super.key, required this.toggleTheme});
+  final Uri? readDeepLink;
+  const MyHomePage({super.key, required this.toggleTheme, this.readDeepLink});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     return StoryFeedScreen(title: "RandomReads",
-    toggleTheme: widget.toggleTheme,likedscreen:false);
+    toggleTheme: widget.toggleTheme,likedscreen:false, readDeepLink: widget.readDeepLink,);
   }
 }
 

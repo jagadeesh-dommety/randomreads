@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "BNRBRK83PZ.com.randomreads.test",
+        "paths": [ "reads/*" ]
+      }
+    ]
+  }
+}

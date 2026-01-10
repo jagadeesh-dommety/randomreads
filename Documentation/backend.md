@@ -123,9 +123,14 @@ Deeplink
 Theme corrections for Dark
 Liked post
 Show swipe 
+Notifications
+Steaks
+Start session (when app opened)
+end session (save the activity)
 Menu
   Username
-  No email
+  No email/sign in
+  Steaks
   Dark/Light mode
   Submit a read story line
   Activity

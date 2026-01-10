@@ -1,0 +1,12 @@
+[
+  {
+    "relation": [ "delegate_permission/common.handle_all_urls" ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.therandomreads.app",
+      "sha256_cert_fingerprints": [
+        "8E:CB:DB:B3:45:7C:67:DE:C3:90:F7:CC:9E:04:5F:EE:60:77:62:0B:D9:96:FE:5E:84:5D:BC:49:F0:A7:58:09"
+      ]
+    }
+  }
+]

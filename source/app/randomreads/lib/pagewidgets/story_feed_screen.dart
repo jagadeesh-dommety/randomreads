@@ -1,6 +1,8 @@
 // ============================================
 // FILE: lib/pages/story_feed_screen.dart
 // ============================================
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:randomreads/common/activity_manager.dart';
@@ -16,17 +18,21 @@ import 'package:randomreads/appbars/topic_app_bar.dart';
 import 'package:randomreads/pagewidgets/submit_storyline_modal.dart';
 import 'package:randomreads/services/auth_storage_service.dart';
 import 'package:randomreads/services/getreadsservice.dart';
+import 'package:app_links/app_links.dart';
+
 
 class StoryFeedScreen extends StatefulWidget {
   final String title;
   final String? topic;  // null for random/all; non-null for topic-specific
   final bool likedscreen;
+  final Uri? readDeepLink;
   final VoidCallback? toggleTheme;
 
   const StoryFeedScreen({
     super.key,
     required this.title,
     this.topic,
+    this.readDeepLink,
     required this.likedscreen,
     this.toggleTheme
   });
@@ -39,6 +45,9 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
   final ScrollController _scrollController = ScrollController();
   final Getreadsservice _readsService = Getreadsservice();
   final ActivityManager _activityManager = ActivityManager(); // New modular class for activity
+
+  late final AppLinks _appLinks;
+  StreamSubscription<Uri>? _linkSub;
   
   // State variables
   List<Read> _readsList = [];
@@ -65,11 +74,31 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
     super.initState();
     _scrollController.addListener(_updateScrollProgress);
     _swipeDirection = SwipeDirection.left;
-    _loadReads();
+    _loadReads().then((_) {
+        if (widget.readDeepLink != null) {
+          _handleDeepLink(widget.readDeepLink!);
+        }
+      });
+      _initDeepLinks();
+  }
+  void _initDeepLinks() {
+    _appLinks = AppLinks();
+
+    _linkSub = _appLinks.uriLinkStream.listen(
+      (uri) {
+        if (!mounted) return;
+        _handleDeepLink(uri);
+      },
+      onError: (err) {
+        // optional logging
+      },
+    );
   }
 
+  
   @override
   void dispose() {
+     _linkSub?.cancel();
     _activityManager.dispose(); // Clean up manager
     _scrollController.removeListener(_updateScrollProgress);
     _scrollController.dispose();
@@ -117,7 +146,27 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
       });
     }
   }
+  Future<void> _handleDeepLink(Uri uri) async {
+  if (uri.pathSegments.length == 2 &&
+      uri.pathSegments.first == 'read') {
 
+    final readId = uri.pathSegments[1];
+    Read? read = await _readsService.fetchReadItem(readId).then((read) {
+      if (mounted) {
+        setState(() {
+          _readsList.insert(_currentReadIndex+1, read); // Add to the start of the list
+          _currentReadIndex = _currentReadIndex+1; // Navigate to the new read
+        });
+        _startNewActivity(read.readitem); // Start activity for new read
+        _scrollToTop(); // Scroll to top for new read
+      }
+    }).catchError((error) {
+      if (mounted) {
+        SnackbarHelper.showError(context, 'Failed to load the article from link');
+      }
+    });
+  }
+}
   Future<void> _startNewActivity(ReadItem item) async {
     String? userid = await AuthStorageService.getUserId();
     if (userid != null) {
@@ -318,6 +367,7 @@ class _StoryFeedScreenState extends State<StoryFeedScreen> {
           if (widget.toggleTheme != null) {
             widget.toggleTheme!();
           }
+          Navigator.pop(context); // close drawer first
         },
         onSubmitRead: () {
           // navigate
