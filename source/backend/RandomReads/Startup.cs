@@ -2,8 +2,10 @@ namespace RandomReads
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.StaticFiles;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.FileProviders;
     using Microsoft.Extensions.Hosting;
     using RandomReads.service;
     using System.Text.Json.Serialization;
@@ -54,7 +56,19 @@ namespace RandomReads
 
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            app.UseStaticFiles();
+            var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".json"] = "application/json";
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", ".well-known")),
+    RequestPath = "/.well-known",
+    ContentTypeProvider = provider
+});
+
+// Keep your regular static files middleware
+app.UseStaticFiles();
             app.UseCors("AllowAll");
             app.UseHttpsRedirection();
             app.UseRouting();
